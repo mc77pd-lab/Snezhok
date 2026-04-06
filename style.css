@@ -1277,3 +1277,60 @@ code {
     padding: 10px 12px;
   }
 }
+/* ─── ПОДСКАЗКА СВАЙПА В КАРУСЕЛИ (1+3 вариант) ─── */
+
+/* Градиентные края */
+.doc-carousel-wrapper {
+  position: relative;
+  margin: 12px 0;
+}
+
+.doc-carousel-wrapper::before,
+.doc-carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.doc-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-main), transparent);
+}
+
+.doc-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-main), transparent);
+}
+
+/* Частичный показ следующего слайда */
+.doc-carousel {
+  padding: 0 20px;
+  margin: 0 -20px;
+}
+
+.carousel-slide {
+  flex: 0 0 calc(100% - 40px);
+  width: calc(100% - 40px);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .doc-carousel {
+    padding: 0 16px;
+    margin: 0 -16px;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 calc(100% - 32px);
+    width: calc(100% - 32px);
+  }
+  
+  .doc-carousel-wrapper::before,
+  .doc-carousel-wrapper::after {
+    width: 30px;
+  }
+}
