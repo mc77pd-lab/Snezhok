@@ -1318,20 +1318,3 @@ code {
   width: calc(100% - 40px);
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
-  .doc-carousel {
-    padding: 0 16px;
-    margin: 0 -16px;
-  }
-  
-  .carousel-slide {
-    flex: 0 0 calc(100% - 32px);
-    width: calc(100% - 32px);
-  }
-  
-  .doc-carousel-wrapper::before,
-  .doc-carousel-wrapper::after {
-    width: 30px;
-  }
-}
