@@ -1,0 +1,1279 @@
+/* ═══════════════════════════════════════════════════════════
+   ТАКСОПАРК SNEZHOK — СТИЛИ (iOS DESIGN)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── ШРИФТ ─── */
+@font-face {
+  font-family: 'AvantGardeGothicITC';
+  src: url('font_head.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── ПЕРЕМЕННЫЕ (Светлая тема) ─── */
+:root {
+  --bg-main: #E5E5E5;
+  --text-primary: #14213D;
+  --text-secondary: #6E6E73;
+  --accent: #FCA311;
+  --card-bg: #FFFFFF;
+  --separator: rgba(0, 0, 0, 0.1);
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --dropdown-bg: rgba(255, 255, 255, 0.95);
+  --hover-bg: #F2F2F7;
+  --warning-bg: rgba(252, 163, 17, 0.12);
+  --danger-text: #FF3B30;
+  --spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* ─── ПЕРЕМЕННЫЕ (Тёмная тема) ─── */
+[data-theme="dark"] {
+  --bg-main: #14213D;
+  --text-primary: #E5E5E5;
+  --text-secondary: #8E8E93;
+  --card-bg: #0A1224;
+  --separator: rgba(255, 255, 255, 0.12);
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  --dropdown-bg: rgba(15, 26, 48, 0.95);
+  --hover-bg: #1A2A4A;
+  --warning-bg: rgba(252, 163, 17, 0.18);
+  --danger-text: #FF6961;
+}
+
+/* ─── СБРОС И БАЗА ─── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  touch-action: manipulation;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:active {
+  opacity: 0.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ─── ШАПКА (iOS Nav Bar) ─── */
+.header {
+  background: var(--dropdown-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--separator);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.logo {
+  font-family: 'AvantGardeGothicITC', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ─── КНОПКИ (iOS Controls) ─── */
+.icon-btn,
+.lang-btn {
+  background: transparent;
+  border: 0;
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--spring);
+}
+
+.icon-btn:hover,
+.lang-btn:hover {
+  background: var(--hover-bg);
+}
+
+.icon-btn:active,
+.lang-btn:active {
+  transform: scale(0.92);
+  background: var(--hover-bg);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+[data-theme="light"] .sun {
+  display: none;
+}
+
+[data-theme="dark"] .moon {
+  display: none;
+}
+
+/* ─── ЯЗЫКОВОЙ СЕЛЕКТОР ─── */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-btn {
+  width: auto;
+  padding: 6px 10px;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+#current-flag-container {
+  display: flex;
+  align-items: center;
+}
+
+#current-flag-container .flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.icon-chevron {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.25s var(--spring);
+}
+
+.lang-btn.open .icon-chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--dropdown-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 0.5px solid var(--separator);
+  border-radius: 14px;
+  padding: 6px;
+  min-width: 190px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.96);
+  transition: all 0.25s var(--spring);
+  z-index: 100;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+
+.lang-option:hover {
+  background: var(--hover-bg);
+}
+
+.lang-option:active {
+  transform: scale(0.98);
+  background: var(--hover-bg);
+}
+
+.lang-option.active {
+  background: var(--accent);
+  color: #14213D;
+  font-weight: 600;
+}
+
+.flag {
+  width: 22px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* ─── АККОРДЕОН (iOS Grouped List) ─── */
+.accordion-block {
+  background: var(--card-bg);
+  border-radius: 14px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  cursor: default;
+  border-bottom: 0.5px solid var(--separator);
+}
+
+.accordion-block.open .accordion-header {
+  border-bottom: none;
+}
+
+.accordion-header h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.accordion-toggle {
+  background: var(--hover-bg);
+  border: 0;
+  color: var(--accent);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s var(--spring);
+  font-size: 1.1rem;
+}
+
+.accordion-toggle:hover {
+  background: var(--accent);
+  color: var(--card-bg);
+}
+
+.accordion-toggle:active {
+  transform: scale(0.9);
+}
+
+.icon-plus,
+.icon-minus {
+  display: none;
+  line-height: 1;
+}
+
+.accordion-toggle[data-open="false"] .icon-plus {
+  display: block;
+}
+
+.accordion-toggle[data-open="true"] .icon-minus {
+  display: block;
+}
+
+.accordion-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height 0.45s var(--spring), opacity 0.3s ease, padding 0.4s var(--spring);
+}
+
+.accordion-block.open .accordion-body {
+  max-height: 10000px;
+  opacity: 1;
+  padding: 0 18px 20px;
+}
+
+/* Статичный блок (Контакты) */
+.static-block .accordion-header {
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+
+.static-block .accordion-body {
+  max-height: none !important;
+  opacity: 1 !important;
+  padding: 0 18px 16px !important;
+  overflow: visible;
+}
+
+/* ─── КОНТЕНТ ─── */
+.accordion-body h3 {
+  margin: 16px 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.accordion-body p,
+.accordion-body li {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.check-list,
+.step-list {
+  padding-left: 18px;
+}
+
+.step-list {
+  list-style-type: decimal;
+}
+
+.check-list {
+  list-style-type: disc;
+}
+
+.check-list li::marker {
+  color: var(--accent);
+}
+
+.info-block {
+  background: var(--warning-bg);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border-left: 3px solid var(--accent);
+}
+
+.info-block.warning-bg {
+  background: rgba(255, 59, 48, 0.1);
+  border-left-color: var(--danger-text);
+}
+
+[data-theme="dark"] .info-block.warning-bg {
+  background: rgba(255, 59, 48, 0.15);
+}
+
+.danger {
+  color: var(--danger-text);
+  font-weight: 600;
+  margin: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.price {
+  color: var(--danger-text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.traffic-sign {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin: 0 3px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.fine-item {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 0.5px solid var(--separator);
+}
+
+.fine-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.meds-block {
+  margin-top: 8px;
+}
+
+code {
+  background: var(--hover-bg);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ─── ВЫДЕЛЕНИЕ ТЕКСТА ─── */
+.highlight {
+  background: rgba(110, 110, 115, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .highlight {
+  background: rgba(142, 142, 147, 0.25);
+}
+
+/* ─── РЕКОМЕНДАЦИИ С ИКОНКАМИ ─── */
+.recommendation-box {
+  background: rgba(252, 163, 17, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-primary);
+}
+
+.recommendation-box .rec-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.recommendation-box .rec-content {
+  flex: 1;
+}
+
+[data-theme="dark"] .recommendation-box {
+  background: rgba(252, 163, 17, 0.12);
+}
+
+/* ─── ИНФО-ЗАМЕТКА ─── */
+.info-note {
+  background: var(--hover-bg);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.info-note .note-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+/* ─── ПРЕДУПРЕЖДЕНИЕ О ПУТЕВОМ ЛИСТЕ ─── */
+.waybill-warning {
+  background: rgba(255, 59, 48, 0.1);
+  border-left: 3px solid var(--danger-text);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.waybill-warning .warning-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--danger-text);
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .waybill-warning {
+  background: rgba(255, 59, 48, 0.15);
+}
+
+/* ─── КАРУСЕЛЬ ДОКУМЕНТОВ ─── */
+.doc-carousel-wrapper {
+  position: relative;
+  margin: 12px 0;
+}
+
+.doc-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.doc-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 14px;
+  background: var(--hover-bg);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.carousel-caption {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.carousel-caption .text-secondary {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0 4px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--separator);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s var(--spring);
+}
+
+.indicator:hover {
+  background: var(--accent);
+}
+
+.indicator.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+.indicator:active {
+  transform: scale(0.95);
+}
+
+/* ─── КОНТАКТЫ ─── */
+.contacts-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+@media (min-width: 720px) {
+  .contacts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-address h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--separator);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-list a {
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* ─── ПОДВАЛ ─── */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  border-top: 0.5px solid var(--separator);
+}
+
+/* ─── АДАПТИВ ─── */
+@media (max-width: 600px) {
+  .header {
+    padding: 10px 14px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .accordion-header {
+    padding: 14px 16px;
+  }
+
+  .accordion-block.open .accordion-body {
+    padding: 0 16px 18px;
+  }
+
+  .dropdown-menu {
+    right: -6px;
+    min-width: 200px;
+  }
+
+  .logo {
+    font-size: 1.05rem;
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── ПЕЧАТЬ ─── */
+@media print {
+  .header,
+  .footer,
+  .accordion-toggle,
+  .lang-dropdown,
+  .theme-toggle,
+  .carousel-indicators {
+    display: none !important;
+  }
+
+  .accordion-block,
+  .accordion-body {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+/* ─── РЕКОМЕНДАЦИИ С ИКОНКАМИ (ИСПРАВЛЕНО) ─── */
+.recommendation-box {
+  background: rgba(252, 163, 17, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 16px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.recommendation-box .rec-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.recommendation-box .rec-content {
+  flex: 1;
+}
+
+[data-theme="dark"] .recommendation-box {
+  background: rgba(252, 163, 17, 0.12);
+}
+
+/* ─── ИНФО-ЗАМЕТКА (ИСПРАВЛЕНО) ─── */
+.info-note {
+  background: var(--hover-bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.info-note .note-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ─── ПРЕДУПРЕЖДЕНИЕ О ПУТЕВОМ ЛИСТЕ (ИСПРАВЛЕНО) ─── */
+.waybill-warning {
+  background: rgba(255, 59, 48, 0.1);
+  border-left: 3px solid var(--danger-text);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.waybill-warning .warning-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--danger-text);
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .waybill-warning {
+  background: rgba(255, 59, 48, 0.15);
+}
+
+/* ─── АДАПТИВ ДЛЯ МОБИЛЬНЫХ ─── */
+@media (max-width: 600px) {
+  .recommendation-box {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .recommendation-box .rec-icon {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+  }
+  
+  .info-note {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  
+  .info-note .note-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .waybill-warning {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .waybill-warning .warning-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+/* ─── КАРУСЕЛИ КОНТАКТОВ ─── */
+.contacts-carousel-wrapper {
+  position: relative;
+  margin: 16px 0;
+}
+
+.carousel-location-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--hover-bg);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  transition: all 0.2s var(--spring);
+}
+
+.nav-link:hover {
+  background: var(--accent);
+  color: #14213D;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.contacts-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 16px;
+  padding: 4px 4px 20px;
+}
+
+.contacts-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.operator-card {
+  flex: 0 0 280px;
+  max-width: 280px;
+  background: var(--card-bg);
+  border: 0.5px solid var(--separator);
+  border-radius: 16px;
+  padding: 48px 16px 16px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.flag-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid var(--card-bg);
+  overflow: hidden;
+  background: var(--bg-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.flag-badge .flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.operator-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  padding: 6px 16px;
+  border: 1.5px solid var(--accent);
+  border-radius: 20px;
+  background: transparent;
+}
+
+.operator-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--spring);
+}
+
+.action-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.action-btn.phone {
+  background: var(--accent);
+  color: #14213D;
+}
+
+.action-btn.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.action-btn.telegram {
+  background: #0088cc;
+  color: #fff;
+}
+
+.action-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.operator-hours {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.operator-hours .hours-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Адаптив для каруселей контактов */
+@media (max-width: 600px) {
+  .operator-card {
+    flex: 0 0 260px;
+    max-width: 260px;
+    padding: 44px 14px 14px;
+  }
+  
+  .flag-badge {
+    width: 44px;
+    height: 44px;
+    top: -14px;
+  }
+  
+  .operator-name {
+    font-size: 0.95rem;
+    padding: 5px 14px;
+  }
+  
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ─── ПРИМЕРЫ (СМС) ─── */
+.example-box {
+  background: var(--hover-bg);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent);
+}
+
+/* ─── УВЕДОМЛЕНИЕ О ВОЗВРАТЕ СРЕДСТВ ─── */
+.refund-notice {
+  background: rgba(252, 163, 17, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.refund-notice .notice-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .refund-notice {
+  background: rgba(252, 163, 17, 0.12);
+}
+
+/* Флаги в языковом меню */
+.lang-option .flag {
+  width: 22px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* Флаги в карточках операторов */
+.flag-badge .flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── ИЗОБРАЖЕНИЕ В РАЗДЕЛЕ ─── */
+.section-image-wrapper {
+  margin: 12px 0 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .section-image {
+    max-height: 300px;
+  }
+}
+
+/* ─── ИЗОБРАЖЕНИЯ В ШТРАФАХ ─── */
+.fine-image-wrapper {
+  margin: 12px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.fine-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+  background: var(--hover-bg);
+}
+
+/* ─── УВЕДОМЛЕНИЕ О ВОЗРАСТЕ ─── */
+.age-notice {
+  background: rgba(252, 163, 17, 0.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent);
+}
+
+.age-notice .notice-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .age-notice {
+  background: rgba(252, 163, 17, 0.15);
+}
+
+/* ─── АДАПТИВ ─── */
+@media (max-width: 600px) {
+  .fine-image {
+    max-height: 250px;
+  }
+  
+  .age-notice {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+}
+
+/* ─── СЕКЦИЯ ПЛАТНЫХ ПАРКОВОК ─── */
+.parking-info-section {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.parking-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--hover-bg);
+}
+
+.parking-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+}
+
+.parking-caption {
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  margin: 0;
+  border-top: 1px solid var(--separator);
+}
+
+.parking-text {
+  background: var(--warning-bg);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+}
+
+.parking-text p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.parking-reminder {
+  background: rgba(252, 163, 17, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.parking-reminder .reminder-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.parking-reminder.danger-reminder {
+  background: rgba(255, 59, 48, 0.1);
+  border-left: 3px solid var(--danger-text);
+}
+
+.parking-reminder.danger-reminder .reminder-icon {
+  color: var(--danger-text);
+}
+
+[data-theme="dark"] .parking-reminder {
+  background: rgba(252, 163, 17, 0.15);
+}
+
+[data-theme="dark"] .parking-reminder.danger-reminder {
+  background: rgba(255, 59, 48, 0.15);
+}
+
+/* ─── АДАПТИВ ─── */
+@media (max-width: 600px) {
+  .parking-image {
+    max-height: 250px;
+  }
+  
+  .parking-reminder {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
