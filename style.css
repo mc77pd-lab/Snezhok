@@ -1279,33 +1279,6 @@ code {
 }
 /* ─── ПОДСКАЗКА СВАЙПА В КАРУСЕЛИ ─── */
 
-/* Градиентные края */
-.doc-carousel-wrapper {
-  position: relative;
-  margin: 12px 0;
-}
-
-.doc-carousel-wrapper::before,
-.doc-carousel-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.doc-carousel-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--bg-main), transparent);
-}
-
-.doc-carousel-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg-main), transparent);
-}
-
 /* Частичный показ следующего слайда (все устройства) */
 .doc-carousel {
   padding: 0 6px;
@@ -1327,10 +1300,5 @@ code {
   .carousel-slide {
     flex: 0 0 calc(100% - 20px);
     width: calc(100% - 20px);
-  }
-  
-  .doc-carousel-wrapper::before,
-  .doc-carousel-wrapper::after {
-    width: 30px;
   }
 }
