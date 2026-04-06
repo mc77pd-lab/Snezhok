@@ -1282,13 +1282,13 @@ code {
 
 /* Частичный показ следующего слайда */
 .doc-carousel {
-  padding: 0 20px;
-  margin: 0 -20px;
+  padding: 0 10px;
+  margin: 0 -10px;
 }
 
 .carousel-slide {
-  flex: 0 0 calc(100% - 40px);
-  width: calc(100% - 40px);
+  flex: 0 0 calc(100% - 20px);
+  width: calc(100% - 20px);
 }
 
 /* Адаптив для мобильных */
