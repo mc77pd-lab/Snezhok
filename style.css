@@ -1306,15 +1306,3 @@ code {
   right: 0;
   background: linear-gradient(to left, var(--bg-main), transparent);
 }
-
-/* Частичный показ следующего слайда */
-.doc-carousel {
-  padding: 0 20px;
-  margin: 0 -20px;
-}
-
-.carousel-slide {
-  flex: 0 0 calc(100% - 40px);
-  width: calc(100% - 40px);
-}
-
