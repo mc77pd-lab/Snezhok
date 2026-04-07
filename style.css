@@ -1302,26 +1302,3 @@ code {
     width: calc(100% - 20px);
   }
 }
-
-/* === Картинка "кирпич" как в карусели === */
-#fines .fine-image {
-  width: 100%;
-  max-width: 280px;  /* Тот же размер, что у картинок в карусели */
-  height: auto;
-  display: block;
-  margin: 16px auto;
-  border-radius: 8px;  /* Если в карусели есть скругление */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);  /* Если в карусели есть тень */
-}
-
-#fines .fine-image-wrapper {
-  text-align: center;
-  padding: 8px 0;
-}
-
-/* Адаптив для мобильных */
-@media (max-width: 480px) {
-  #fines .fine-image {
-    max-width: 260px;
-  }
-}
