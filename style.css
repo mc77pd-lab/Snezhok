@@ -1318,3 +1318,40 @@ code {
     padding: 10px 0;
   }
 }
+
+/* === ФИКС ДЛЯ КАРТИНОК В БЛОКАХ ШТРАФОВ === */
+/* Работает даже если есть перебивающие стили */
+
+/* Контейнер картинки */
+#fines .fine-image-wrapper,
+#fines .section-image-wrapper,
+#fines .parking-image-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  display: block !important;
+  padding: 8px 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Сама картинка */
+#fines .fine-image,
+#fines .section-image,
+#fines .parking-image {
+  width: 100% !important;
+  max-width: 320px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 12px auto !important;
+  object-fit: contain;
+}
+
+/* Только для мобильных (до 480px) */
+@media (max-width: 480px) {
+  #fines .fine-image,
+  #fines .section-image,
+  #fines .parking-image {
+    width: 95% !important;
+    max-width: 300px !important;
+  }
+}
