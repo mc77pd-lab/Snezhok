@@ -1134,14 +1134,14 @@ code {
 .fine-image-wrapper {
   margin: 12px 0;
   border-radius: 12px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: var(--shadow);
 }
 
 .fine-image {
   width: 100%;
   height: auto;
-  max-height: none;
+  max-height: 500px;
   object-fit: contain;
   display: block;
   background: var(--hover-bg);
@@ -1300,5 +1300,29 @@ code {
   .carousel-slide {
     flex: 0 0 calc(100% - 20px);
     width: calc(100% - 20px);
+  }
+}
+
+/* ─── ИЗОБРАЖЕНИЯ В ШТРАФАХ ─── */
+.fine-image-wrapper {
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: visible;
+  box-shadow: var(--shadow);
+}
+
+.fine-image {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+  background: var(--hover-bg);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .fine-image {
+    max-height: none;
   }
 }
