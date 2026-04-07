@@ -1302,12 +1302,3 @@ code {
     width: calc(100% - 20px);
   }
 }
-
-/* Разжимаем родительские контейнеры */
-#fines .fine-item,
-#fines .accordion-body {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: visible !important;
-  box-sizing: border-box;
-}
