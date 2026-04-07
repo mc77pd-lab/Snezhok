@@ -1302,3 +1302,19 @@ code {
     width: calc(100% - 20px);
   }
 }
+
+/* Адаптация картинки "кирпич" и других fine-image на мобильных */
+@media (max-width: 768px) {
+  .fine-image {
+    width: 100% !important;
+    max-width: 300px; /* Ограничение, чтобы не была огромной на планшетах */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Центрирование */
+  }
+  
+  .fine-image-wrapper {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
