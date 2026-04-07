@@ -1141,7 +1141,7 @@ code {
 .fine-image {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: 700px;
   object-fit: contain;
   display: block;
   background: var(--hover-bg);
