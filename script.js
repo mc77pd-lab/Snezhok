@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightCurrentLang();
 
   // ═══════════════════════════════════════════════════════════
-  // 3. АККОРДЕОН
+  // 3. АККОРДЕОН (КЛИК ПО ВСЕМУ ЗАГОЛОВКУ)
   // ═══════════════════════════════════════════════════════════
   const accordions = document.querySelectorAll('.accordion-block:not(.static-block)');
   const STORAGE_KEY = 'snezok_accordion_states';
@@ -120,10 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
       saveStates();
     }
 
+    // Клик по всему заголовку
     accordions.forEach(acc => {
-      const btn = acc.querySelector('.accordion-toggle');
-      if (btn) {
-        btn.addEventListener('click', (e) => {
+      const header = acc.querySelector('.accordion-header');
+      if (header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', (e) => {
           e.stopPropagation();
           toggleBlock(acc, !acc.classList.contains('open'), true);
         });
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
 
   // ═══════════════════════════════════════════════════════════
-  // 4. КАРУСЕЛИ (Документы + Осмотр автомобиля + Контакты)
+  // 4. КАРУСЕЛИ (Документы + Осмотр автомобиля + Контакты + Парковки + Дети)
   // ═══════════════════════════════════════════════════════════
   function initCarousel(carouselId, indicatorsId) {
     const carousel = document.getElementById(carouselId);
@@ -141,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (carousel && indicators.length > 0) {
       let currentIndex = 0;
-      // Поддерживаем оба типа слайдов: carousel-slide и operator-card
       const slides = carousel.querySelectorAll('.carousel-slide, .operator-card');
       const slideCount = slides.length;
 
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-    // Инициализация всех каруселей
+  // Инициализация всех каруселей
   initCarousel('doc-carousel', '#doc-indicators');
   initCarousel('inspection-carousel', '#inspection-indicators');
   initCarousel('contacts-carousel-1', '#contacts-indicators-1');
@@ -183,6 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel('yandex-pro-carousel', '#yandex-pro-indicators');
   initCarousel('parking-reg-carousel', '#parking-reg-indicators');
   initCarousel('parking-pay-carousel', '#parking-pay-indicators');
-  initCarousel('children-carousel', '#children-indicators'); 
+  initCarousel('children-carousel', '#children-indicators');
 
 });
