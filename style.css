@@ -1326,3 +1326,28 @@ code {
     max-height: none;
   }
 }
+
+/* ─── ЛОГОТИП В ШАПКЕ ─── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-image {
+  height: 1em;  /* Высота как у заглавной буквы */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .logo {
+    gap: 6px;
+  }
+  
+  .logo-image {
+    height: 0.9em;  /* Чуть меньше на телефонах */
+  }
+}
