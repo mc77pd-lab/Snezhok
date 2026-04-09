@@ -381,6 +381,17 @@ a:active {
   color: var(--accent);
   margin-right: 8px;   /* Отступ от точки до текста */
 }
+/* Для вложенных списков (внутренняя страховка) */
+.info-block .check-list {
+  padding-left: 32px;
+  margin-left: 0;
+}
+
+/* Для списков в штрафах (превышение скорости) */
+.fine-item .check-list {
+  padding-left: 28px;
+  margin-left: 4px;
+}
 
 .info-block {
   background: var(--warning-bg);
