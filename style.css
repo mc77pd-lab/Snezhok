@@ -1389,35 +1389,34 @@ code {
 
 /* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
 .app-download-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 колонки */
+  gap: 8px;
   margin: 12px 0 16px;
+  max-width: 340px;  /* Ограничиваем ширину */
 }
 
 .download-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
   background: var(--card-bg);
   border: 1.5px solid var(--separator);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--text-primary);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.2s var(--spring);
-  flex: 1 1 calc(50% - 5px);
-  min-width: 140px;
-  max-width: 200px;
 }
 
 .download-btn:hover {
   border-color: var(--accent);
   background: var(--hover-bg);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(252, 163, 17, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(252, 163, 17, 0.15);
 }
 
 .download-btn:active {
@@ -1425,26 +1424,26 @@ code {
 }
 
 .store-icon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
 /* Адаптив для мобильных */
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .app-download-buttons {
-    gap: 8px;
+    max-width: 100%;
+    gap: 6px;
   }
   
   .download-btn {
-    flex: 1 1 100%;
-    padding: 12px 14px;
-    font-size: 0.95rem;
+    padding: 7px 10px;
+    font-size: 0.75rem;
   }
   
   .store-icon {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
   }
 }
 
