@@ -364,9 +364,9 @@ a:active {
   color: var(--text-primary);
 }
 
-.check-list,
-.step-list {
-  padding-left: 18px;
+.check-list {
+  padding-left: 28px;  /* Увеличили отступ слева */
+  margin-left: 4px;    /* Дополнительное смещение вправо */
 }
 
 .step-list {
@@ -379,6 +379,7 @@ a:active {
 
 .check-list li::marker {
   color: var(--accent);
+  margin-right: 8px;   /* Отступ от точки до текста */
 }
 
 .info-block {
