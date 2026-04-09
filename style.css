@@ -1335,19 +1335,25 @@ code {
 }
 
 .logo-image {
-  height: 1em;  /* Высота как у заглавной буквы */
-  width: auto;
+  height: 85%;  /* 85% от высоты шапки */
+  width: auto;  /* Ширина подстроится автоматически */
   object-fit: contain;
   display: block;
+  max-width: 200px;  /* Максимальная ширина (чтобы не был слишком широким) */
 }
 
 /* Адаптив для мобильных */
 @media (max-width: 600px) {
-  .logo {
-    gap: 6px;
-  }
-  
   .logo-image {
-    height: 0.9em;  /* Чуть меньше на телефонах */
+    height: 75%;  /* Чуть меньше на телефонах */
+    max-width: 150px;
+  }
+}
+
+/* Очень узкие экраны */
+@media (max-width: 400px) {
+  .logo-image {
+    height: 70%;
+    max-width: 120px;
   }
 }
