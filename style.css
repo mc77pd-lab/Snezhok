@@ -1386,3 +1386,75 @@ code {
 [data-theme="dark"] .warning-box {
   background: rgba(255, 59, 48, 0.12);
 }
+
+/* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
+.app-download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--separator);
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s var(--spring);
+  flex: 1 1 calc(50% - 5px);
+  min-width: 140px;
+  max-width: 200px;
+}
+
+.download-btn:hover {
+  border-color: var(--accent);
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(252, 163, 17, 0.15);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.store-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .app-download-buttons {
+    gap: 8px;
+  }
+  
+  .download-btn {
+    flex: 1 1 100%;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .store-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Тёмная тема */
+[data-theme="dark"] .download-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .download-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+}
