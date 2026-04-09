@@ -1357,3 +1357,32 @@ code {
     max-width: 120px;
   }
 }
+
+/* ─── ПРЕДУПРЕЖДЕНИЕ О НЕЗАКОННЫХ ПРЕДЛОЖЕНИЯХ ─── */
+.warning-box {
+  background: rgba(255, 59, 48, 0.08);
+  border: 2px solid var(--danger-text);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 8px 0;
+}
+
+.warning-box p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.warning-box p:last-child {
+  margin-bottom: 0;
+}
+
+.warning-box .danger {
+  background: rgba(255, 59, 48, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+[data-theme="dark"] .warning-box {
+  background: rgba(255, 59, 48, 0.12);
+}
