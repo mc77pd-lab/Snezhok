@@ -1196,7 +1196,7 @@ code {
 
 .parking-image-wrapper {
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: var(--shadow);
   background: var(--hover-bg);
 }
@@ -1204,7 +1204,7 @@ code {
 .parking-image {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: none;
   object-fit: contain;
   display: block;
 }
