@@ -1427,14 +1427,17 @@ code {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0);  /* Чёрные иконки на светлой теме */
 }
 
 /* Адаптив для мобильных */
-@media (max-width: 400px) {
-  .app-download-buttons {
-    max-width: 100%;
-    gap: 6px;
+@media (max-width: 600px) {
+  .store-icon {
+    width: 16px;
+    height: 16px;
   }
+}
   
   .download-btn {
     padding: 7px 10px;
@@ -1447,13 +1450,7 @@ code {
   }
 }
 
-/* Тёмная тема */
-[data-theme="dark"] .download-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .download-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent);
+/* Тёмная тема — белые иконки */
+[data-theme="dark"] .store-icon {
+  filter: grayscale(100%) brightness(100);
 }
