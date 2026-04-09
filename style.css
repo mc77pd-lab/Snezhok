@@ -1388,69 +1388,73 @@ code {
 }
 
 /* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
+
+/* Сетка для кнопок (2 колонки) */
 .app-download-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 колонки */
-  gap: 8px;
-  margin: 12px 0 16px;
-  max-width: 340px;  /* Ограничиваем ширину */
+  grid-template-columns: 1fr 1fr; /* Две равные колонки */
+  gap: 10px; /* Расстояние между кнопками */
+  margin: 16px 0 20px;
+  max-width: 380px; /* Ограничение ширины, чтобы кнопки не растягивались */
 }
 
+/* Стиль самой кнопки */
 .download-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 12px;
+  justify-content: center; /* Центрируем контент */
+  gap: 10px;
+  padding: 10px 12px;
   background: var(--card-bg);
-  border: 1.5px solid var(--separator);
-  border-radius: 8px;
-  color: var(--text-primary);
+  border: 1px solid var(--separator);
+  border-radius: 12px;
   text-decoration: none;
-  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s var(--spring);
+  transition: all 0.2s ease;
 }
 
+/* Эффект при наведении */
 .download-btn:hover {
   border-color: var(--accent);
   background: var(--hover-bg);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(252, 163, 17, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.download-btn:active {
-  transform: translateY(0);
-}
-
+/* Стили для иконки магазина */
 .store-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0);  /* Чёрные иконки на светлой теме */
+  display: block;
+  
+  /* СВЕТЛАЯ ТЕМА: Иконки становятся чёрными */
+  filter: brightness(0); 
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
-  .store-icon {
-    width: 16px;
-    height: 16px;
-  }
+/* ТЁМНАЯ ТЕМА: Иконки становятся белыми */
+[data-theme="dark"] .store-icon {
+  /* Инвертируем чёрный в белый */
+  filter: invert(1); 
 }
+
+/* Адаптив для мобильных (чуть компактнее) */
+@media (max-width: 400px) {
+  .app-download-buttons {
+    gap: 8px;
+    max-width: 100%; /* На очень узких экранах на всю ширину */
+  }
   
   .download-btn {
-    padding: 7px 10px;
-    font-size: 0.75rem;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    gap: 8px;
   }
   
   .store-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
-}
-
-/* Тёмная тема — белые иконки */
-[data-theme="dark"] .store-icon {
-  filter: grayscale(100%) brightness(100);
 }
