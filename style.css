@@ -1389,20 +1389,18 @@ code {
 
 /* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
 
-/* Сетка для кнопок (2 колонки) */
 .app-download-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Две равные колонки */
-  gap: 10px; /* Расстояние между кнопками */
+  gap: 10px;
   margin: 16px 0 20px;
-  max-width: 380px; /* Ограничение ширины, чтобы кнопки не растягивались */
+  max-width: 380px;
 }
 
-/* Стиль самой кнопки */
 .download-btn {
   display: flex;
   align-items: center;
-  justify-content: center; /* Центрируем контент */
+  justify-content: center;
   gap: 10px;
   padding: 10px 12px;
   background: var(--card-bg);
@@ -1415,7 +1413,6 @@ code {
   transition: all 0.2s ease;
 }
 
-/* Эффект при наведении */
 .download-btn:hover {
   border-color: var(--accent);
   background: var(--hover-bg);
@@ -1423,28 +1420,19 @@ code {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Стили для иконки магазина */
+/* Стили иконки — только размер, цвета оригинальные */
 .store-icon {
   width: 22px;
   height: 22px;
   object-fit: contain;
   display: block;
-  
-  /* СВЕТЛАЯ ТЕМА: Иконки становятся чёрными */
-  filter: brightness(0); 
 }
 
-/* ТЁМНАЯ ТЕМА: Иконки становятся белыми */
-[data-theme="dark"] .store-icon {
-  /* Инвертируем чёрный в белый */
-  filter: invert(1); 
-}
-
-/* Адаптив для мобильных (чуть компактнее) */
+/* Адаптив для мобильных */
 @media (max-width: 400px) {
   .app-download-buttons {
     gap: 8px;
-    max-width: 100%; /* На очень узких экранах на всю ширину */
+    max-width: 100%;
   }
   
   .download-btn {
