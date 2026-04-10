@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNEZHOK taksi parki</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+   <div class="logo">
+    <img src="img/logo/logo2.svg" alt="SNEZHOK" class="logo-image">
+</div>
+
+    <div class="header-controls">
+      <div class="lang-dropdown">
+        <button class="lang-btn" id="lang-toggle" aria-label="Tilni tanlang">
+          <div id="current-flag-container"></div>
+          <span id="current-lang-label">O'zbekcha</span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+               <div class="dropdown-menu" id="lang-menu" role="listbox">
+          <a class="lang-option" href="index.html" role="option"><img class="flag" src="img/flags/ru.svg" alt="Rossiya"><span>Ruscha</span></a>
+          <a class="lang-option" href="kg.html" role="option"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"><span>Qirg'izcha</span></a>
+          <a class="lang-option" href="kz.html" role="option"><img class="flag" src="img/flags/kz.svg" alt="Qozog'iston"><span>Қaзақsha</span></a>
+          <a class="lang-option" href="tj.html" role="option"><img class="flag" src="img/flags/tj.svg" alt="Tojikiston"><span>Toҷikӣ</span></a>
+          <a class="lang-option" href="tm.html" role="option"><img class="flag" src="img/flags/tm.svg" alt="Turkmaniston"><span>Türkmençe</span></a>
+          <a class="lang-option" href="uz.html" role="option"><img class="flag" src="img/flags/uz.svg" alt="O'zbekiston"><span>O'zbekcha</span></a>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="theme-toggle" aria-label="Mavzuni o'zgartirish">
+        <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 1. Ijara shartlari -->
+    <section class="accordion-block" id="conditions">
+      <div class="accordion-header"><h2>Ijara shartlari</h2><button class="accordion-toggle" aria-expanded="true"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Ijaraning eng qisqa muddati – <strong>14 kun</strong>.</li>
+          <li>Ijaraning birinchi kuni – <strong>bepul</strong> (yangi haydovchilar uchun).</li>
+          <li>Mashinani topshirish: dushanba – juma.</li>
+          <li>Mashinani topshirishdan <strong>3 kun oldin</strong> kolonna boshlig'iga xabar berish kerak.</li>
+          <li>Ijara haqi har kuni soat <strong>12:00</strong>da undiriladi.</li>
+          <li>Park komissiyasi – <strong>3%</strong>.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Kompaniyaning ichki sug'urtasi (KASKO)</h3>
+          <p>Narxi: <strong>+100 ₽/kun</strong>.</li>
+          <p>Mashina jiddiy zarar ko'rsa, haydovchi <strong>20 000 ₽</strong>dan ko'p bo'lmagan to'lovni to'laydi, qolgan xarajatlarni kompaniya qoplaydi.</p>
+          <p class="warning-text">Bu xizmat quyidagi hollarda <strong>ishlamaydi</strong>:</p>
+          <ul>
+            <li>mashinani boshqa odamga bersangiz;</li>
+            <li>mast holatda mashina haydasangiz;</li>
+            <li>yo'l qoidalarini qo'pol ravishda buzsangiz;</li>
+            <li>mashinani atayin shikastlasangiz;</li>
+            <li>YTH sodir bo'lgan joydan qochib ketsangiz;</li>
+            <li>YTH haqidagi hujjatlar bo'lmasa;</li>
+            <li>mashina buzilganini bilib turib haydagan bo'lsangiz;</li>
+            <li>mashinani shaxsiy maqsadlarda ishlatsangiz.</li>
+          </ul>
+        </div>
+        <p><strong>Haydovchi quyidagilar uchun moddiy javobgarlikda bo'ladi:</strong> chizishlar, tirnalishlar, egilgan joylar, yurish qismlari zarari, shinlar, disklar, oynalar va boshqa zararlar.</p>
+        <p>Jarimalar va ChKAD, MSD yo'llaridan o'tish to'lovi haydovchining mobil ilovasidan avtomatik ravishda undiriladi. <strong>1 000 ₽</strong>dan yuqori jarimalar har kuni <strong>1 000 ₽</strong>dan undiriladi.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div class="rec-content"><strong>Ta'qiqlanadi:</strong> mashinani boshqa odamga berish va uni maqsadsiz ishlatish.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Mashinani tekshirish -->
+    <section class="accordion-block" id="car-inspect">
+      <div class="accordion-header"><h2>Mashinani qabul qilishda tekshirish</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <h3>Tashqi ko'rinishi:</h3>
+        <ul class="check-list"><li>kuzovga yopishtirilgan elementlar;</li><li>zararlarning bor-yo'qligi (chizishlar, egilishlar va h.k.);</li><li>salon holati;</li><li>g'ildiraklar holati;</li><li>old oynaning butunligi.</li></ul>
+        <h3>Texnik holati:</h3>
+        <ul class="check-list"><li>moyning, tormoz va sovutish suyuqliklari darajasi;</li><li>generator qayishining holati;</li><li>akkumulyatorning holati.</li></ul>
+        <h3>Yoritish asboblari:</h3>
+        <ul class="check-list"><li>gabarit chiroqlar, faralar, burilish signallari, tormoz chiroqlari, orqaga yurish chiroqlari.</li></ul>
+        <h3>Kerakli jihozlar:</h3>
+        <ul class="check-list"><li>tomdagi va yonboshdagi taksi belgilari;</li><li>favqulodda to'xtash belgisi, o't o'chirgich, dori-darmon qutisi;</li><li>zaxira g'ildirak, domkrat, gayka kaliti.</li></ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <div class="rec-content">Mashinani qabul qilishda hujjatlarni, ularning amal qilish muddatini tekshiring, ro'yxatdan o'tish raqamlarini hujjatlar bilan taqqoslang.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Hujjatlar (KARUSEL) -->
+    <section class="accordion-block" id="documents">
+      <div class="accordion-header"><h2>Özingiz bilan olib yuradigan hujjatlar</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="doc-carousel-wrapper">
+          <div class="doc-carousel" id="doc-carousel">
+            <div class="carousel-slide"><img src="img/driver_license/driver_license.png" alt="Haydovchilik guvohnomasi"><p class="carousel-caption">Haydovchilik guvohnomasi <span class="text-secondary">(amal qilish muddatini tekshiring)</span></p></div>
+            <div class="carousel-slide"><img src="img/sts/sts_2.jpg" alt="Ro'yxatdan o'tish guvohnomasi"><p class="carousel-caption">Ro'yxatdan o'tish guvohnomasi (STS) <span class="text-secondary">(amal qilish muddatini tekshiring)</span></p></div>
+            <div class="carousel-slide"><img src="img/save/save.png" alt="OSAGO sug'urta polisi"><p class="carousel-caption">OSAGO sug'urta polisi <span class="text-secondary">(amal qilish muddatini tekshiring)</span></p></div>
+            <div class="carousel-slide"><img src="img/diagnostic/diag_card.png" alt="Diagnostika kartasi"><p class="carousel-caption">Diagnostika kartasi <span class="text-secondary">(amal qilish muddatini tekshiring)</span></p></div>
+            <div class="carousel-slide"><img src="img/road_list/road_list.png" alt="To'ldirilgan yo'l varaqasi"><p class="carousel-caption">To'ldirilgan yo'l varaqasi</p></div>
+          </div>
+          <div class="carousel-indicators" id="doc-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Yo'l varaqasini olish tartibi -->
+    <section class="accordion-block" id="waybill">
+      <div class="accordion-header"><h2>Yo'l varaqasini olish tartibi</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Parkga kelganingizda, mexanikdan mashina hujjatlarini, tashuvchi kartasini, yo'l varaqasini, tomdagi belgini oling. Olganingizni tasdiqlash uchun <span class="highlight">imzo cheking</span>.</li>
+          <li>Tibbiy ko'rikdan o'ting (umumiy holat, tana harorati, qon bosimi, mastlikni tekshirish), mas'ul odamning oldida <span class="highlight">vaqtni</span> va imzongizni qo'ying.</li>
+          <li>Mexanikdan mashina kalitlarini olib, mashinani tekshirasiz. Tekshiruv tugaganidan so'ng, mexanikning oldida <span class="highlight">vaqtni</span> va imzongizni qo'ying.</li>
+          <li>Mashinani texnik jihatdan yaroqli holatda qabul qilganingiz haqida <span class="highlight">imzo cheking</span>.</li>
+          <li>Taksi belgisi, yo'l varaqasi yoki tashuvchi kartasi yo'qolgan holatlardagi harakatlar haqida xabardor ekanligingizni tasdiqlash uchun <span class="highlight">imzo cheking</span>.</li>
+          <li>Parkdan chiqishda chiqqan <span class="highlight">vaqtni</span> belgilang.</li>
+          <li>Chiqish vaqtidagi mashinaning <span class="highlight">kilometrajini</span> belgilang.</li>
+        </ol>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Yo'l varaqasini noto'g'ri to'ldirish <strong>100 000 ₽</strong> jarima va mashinani <strong>2 oygacha</strong> jarima maydonchasiga olish bilan jazolanadi.</div>
+        </div>
+
+        <div class="info-note">
+          <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>Ba'zi hollarda mexanik va tibbiy xodim haydovchiga o'zi kelishi mumkin.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Har kuni tekshirish -->
+    <section class="accordion-block" id="daily-inspect">
+      <div class="accordion-header"><h2>Har kuni mashinani tekshirish</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Mashinani aylanib chiqib, zarar yo'qligiga ishonch hosil qiling.</li>
+          <li>G'ildiraklarni tekshiring.</li>
+          <li>Suyuqliklar darajasini, qayishdagi chizishlarni, akkumulyator holatini va qisqichlarning mustahkamligini, oqayotgan joylar yo'qligini tekshiring.</li>
+          <li>Hujjatlarni va ularning amal qilish muddatini tekshiring.</li>
+          <li>Mashinaning tozaligiga ishonch hosil qiling.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Agar turar joyda zarar topsangiz:</h3>
+          <ol class="step-list"><li>Kolonna boshlig'iga qo'ng'iroq qiling.</li><li>Mashinani qo'zg'atmasdan, barcha tomondan suratga oling, zamonlarni umumiy va yaqindan tushiring.</li><li>Hodisani rasmiylashtirish uchun politsiyani chaqiring.</li></ol>
+        </div>
+
+        <!-- Mashina suratlari karuseli -->
+        <div class="doc-carousel-wrapper" style="margin-top: 20px;">
+          <div class="doc-carousel" id="inspection-carousel">
+            <div class="carousel-slide"><img src="img/auto/granta.png" alt="lada_granta"><p class="carousel-caption">Lada Granta</p></div>
+            <div class="carousel-slide"><img src="img/auto/h5.png" alt="Hongqi_h5"><p class="carousel-caption">Hongqi H5</p></div>
+            <div class="carousel-slide"><img src="img/auto/jac.png" alt="jac_j7"><p class="carousel-caption">Jac J7</p></div>
+            <div class="carousel-slide"><img src="img/auto/jetta.png" alt="Volkswagen_jetta"><p class="carousel-caption">Volkswagen Jetta</p></div>
+            <div class="carousel-slide"><img src="img/auto/kaiyi.png" alt="kaiyi_e5"><p class="carousel-caption">Kaiyi E5</p></div>
+            <div class="carousel-slide"><img src="img/auto/moscvich.png" alt="moscvich"><p class="carousel-caption">Moskvich 3</p></div>
+            <div class="carousel-slide"><img src="img/auto/polo.png" alt="Volkswagen_polo"><p class="carousel-caption">Volkswagen Polo</p></div>
+            <div class="carousel-slide"><img src="img/auto/rapid.png" alt="Skoda_rapid"><p class="carousel-caption">Skoda Rapid</p></div>
+            <div class="carousel-slide"><img src="img/auto/baic.png" alt="baic_e5plus"><p class="carousel-caption">Baic E5 plus</p></div>
+          </div>
+          <div class="carousel-indicators" id="inspection-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+            <button class="indicator" data-index="8"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Ish bo'yicha maslahatlar -->
+    <section class="accordion-block" id="work-tips">
+      <div class="accordion-header"><h2>Yo'lda ishlash bo'yicha maslahatlar</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p>Ishlash uchun eng foydali vaqt: <strong>05:00–11:00</strong> va <strong>15:00–20:00</strong>. Bu soatlarda talab eng yuqori.</p>
+        <p>Sizning qulayligingiz va xavfsizligingiz eng muhim. Charchoq diqqatni kamaytiradi, shuning uchun tanaffus qiling va yetarlicha uxlang.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Mashinani kechqurun, oldindan yoqilg'i quyib, yuvib qo'yishni tavsiya qilamiz. Bu ertalabki vaqtni tejaydi va yo'lga chiqishdan oldin shoshilmang.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Texnik ko'rik va ta'mirlash -->
+    <section class="accordion-block" id="tech-service">
+      <div class="accordion-header"><h2>Texnik ko'rik va ta'mirlash</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Texnik ko'rik har <strong>10 000 km</strong>da o'tkaziladi.</li>
+          <li>Ta'mirlash va xizmat ko'rsatish – <strong>faydas taksi parkining avtoservisida</strong>.</li>
+          <li>Texnik ko'rikka va ta'mirlashga yozilish – borishdan <strong>3 kun oldin</strong>.</li>
+          <li>Har qanday mustaqil aralashuv (ta'mirlash, ehtiyot qismlarni almashtirish, moy quyish) – <strong>kolonna boshlig'i bilan kelishgandan keyingina</strong>.</li>
+        </ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <div class="rec-content">Mashinani qabul qilishda kolonna boshlig'idan texnik ko'rikka necha kilometrdan keyin kelish kerakligini so'rang.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GIBDD va MADI bilan munosabat -->
+    <section class="accordion-block" id="police-rules">
+      <div class="accordion-header"><h2>GIBDD va MADI bilan munosabat qoidalari</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Tinch, shosilmay, odob bilan muloqot qiling.</li>
+          <li>Mojaro chiqarmang (qo'pollik, ovoz ko'tarish).</li>
+          <li>"Aslida nimaga?", "To'xtatish sababi?", "Sizning huquqingiz yo'q" kabi iboralarni ishlatmang.</li>
+          <li>Agar protokoll tuzilsa, sababini tushuntirib berishini so'rang.</li>
+          <li>Tushunmasangiz – tarjimon so'rang. <strong>Ma'nosi noaniq bo'lgan hujjatlarga imzo chekmang.</strong></li>
+          <li>Protokoll tuzilgan darhol kolonna boshlig'iga xabar bering.</li>
+          <li>Xodimlarning harakatlarining qonuniyligiga ishonchingiz komil bo'lmasa – kolonna boshlig'iga qo'ng'iroq qiling!</li>
+        </ul>
+        <div class="info-block">
+          <h3>MADI tekshiruvi</h3>
+          <p>MADI xodimlari taksi belgilari, tashuvchi kartasi, yo'l varaqasi borligini va tashish xavfsizligini tekshirishi mumkin.</p>
+          <p><strong>Muhim:</strong> MADI xodimi hujjatlarni tekshirish uchun mashinani to'xtatishga huquqi yo'q. Buni faqat politsiya xodimlari amalga oshiradi. Biroq, agar MADI xodimi o'zi kelib hujjat so'rasa – bering, bahslashmang.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Moskva viloyatidan chiqish -->
+    <section class="accordion-block" id="outside-mo">
+      <div class="accordion-header"><h2>Moskva viloyatidan chiqish</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <!-- Sarlavhadan keyingi rasm -->
+        <div class="section-image-wrapper">
+          <img src="img/get_out/out.png" alt="Moskva viloyatidan chiqish" class="section-image">
+        </div>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Moskva viloyatidan chiqishdan oldin kolonna boshlig'iga qo'ng'iroq qilish <strong>majburiydir</strong>.</div>
+        </div>
+        <p>Agar Moskva viloyatidan tashqarida mashina buzilsa yoki YTH sodir bo'lsa, evakuator narxini <strong>haydovchi</strong> to'laydi.</p>
+      </div>
+    </section>
+
+    <!-- 10. YTH -->
+    <section class="accordion-block" id="accident">
+      <div class="accordion-header"><h2>YTH sodir bo'lganda nima qilish kerak</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>To'xtang, favqulodda signalni yoqing, belgini qo'ying. Shahardan tashqarida yorug'lik aks ettiruvchi jilet kiyib oling.</li>
+          <li>Agar jarohatlanganlar bo'lsa – tez yordam chaqiring (<strong>103</strong> yoki <strong>112</strong>). Agar bilmasangiz, birinchi yordam ko'rsatmang.</li>
+          <li>YTH sodir bo'lgan joy, barcha mashinalarning zarari, raqamlarini suratga oling va kolonna boshlig'iga yuboring.</li>
+          <li>GIBDD xodimini kuting.</li>
+        </ol>
+        <div class="info-block">
+          <h3>Agar GIBDD xodimi yo'lni bo'shatishni so'rasa:</h3>
+          <ul><li>Qoidalarga rioya qilgan holda to'xtang. <img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> belgisi ostida mashina qo'ymang.</li><li>Pullik to'xtash joyi bo'lsa – to'lovni to'lang.</li><li>Boshqa yo'l qoidalarini buzmang.</li></ul>
+        </div>
+        <h3>Yevroprotokoll tuzish shartlari:</h3>
+        <ul><li>Kolonna boshlig'i yevroprotokollga rozilik bildirgan;</li><li>YTHda faqat 2 ta mashina ishtirok etgan, jarohatlanganlar yo'q;</li><li>Ikkala haydovchining ham OSAGOs amalda;</li><li>Ikkovi ham yevroprotokollga rozilik bildirgan, infratuzilma zararlanmagan, mashinalar joyi o'zgarmagan.</li></ul>
+        <p><em>Yevroprotokoll – oxirgi chora. Barcha harakatlarni GIBDD orqali rasmiylashtirish uchun qiling.</em></p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Yevroprotokoll tuzilganidan so'ng, ikkinchi ishtirokchi birinchi ketishini kuting.</div>
+        </div>
+        <p class="danger">Agar YTH sizning aybingiz bilan sodir bo'lsa, evakuator narxini siz to'laysiz.</p>
+      </div>
+    </section>
+
+    <!-- 11. Mashina buzilganda -->
+    <section class="accordion-block" id="breakdown">
+      <div class="accordion-header"><h2>Yo'lda mashina buzilganda</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Yo'l qoidalariga va xavfsizlik texnikasiga rioya qilgan holda to'xtang.</li>
+          <li>Favqulodda to'xtash belgisini qo'ying.</li>
+          <li>Yo'lovchilarni tushiring.</li>
+          <li>Mexanik yoki evakuator chaqirish uchun kolonna boshlig'iga qo'ng'iroq qiling.</li>
+        </ol>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Agar pullik to'xtash joyida to'xtashga majbur bo'lsangiz – to'lovni to'lang. Keyinchalik kompensatsiya olasiz.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Jarimalar -->
+    <section class="accordion-block" id="fines">
+      <div class="accordion-header"><h2>Jarimalar</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p class="warning-text">Summalar imtiyozlarsiz to'liq ko'rsatilgan. Ko'p jarimalarni 25–50% imtiyoz bilan to'lash mumkin.</p>
+        
+        <div class="fine-item">
+          <h3>Tashuvchi kartasi yo'q</h3>
+          <p>Jarima: <strong class="price">30 000 ₽</strong>. Old panelning o'ng tomonida bo'lishi kerak.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_card/taxi_card.png" alt="Tashuvchi kartasi" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Taksi chirog'i yoki "shashka" yo'q</h3>
+          <p>Jarima: <strong class="price">50 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_hat/taxi_hat.png" alt="Taksi chirog'i" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Ishdan so'ng chiroqni yechib, haydovchi tomonidagi polga qo'ying. Shu orqali chiroq o'g'irlab ketilmaydi, yo'lga chiqishda o'rnatishni unutmasiz. Chiroqni yukxona qo'ymang.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>O'tloq va trotuarga to'xtash</h3>
+          <p>Jarima: <strong class="price">300 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/grass/grass.png" alt="O'tloqga to'xtash" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Mashinani to'rt g'ildiragi ham asfaltda turganidek qilib to'xtating. Piyodalar uchun trotuarga va bordyurga mashina qo'ymang.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Bolalarni tashish qoidalarini buzish</h3>
+          <p>Jarima: <strong class="price">200 000 ₽</strong>. O'rindiq yo'q/noto'g'ri/noto'g'ri o'rnatilgan yoki bola remeni taqilmagan.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/child/child_chair.png" alt="Bolalar o'rindig'i" class="fine-image">
+          </div>
+          <!-- Bolalar suratlari karuseli -->
+          <div class="doc-carousel-wrapper" style="margin-top: 16px;">
+            <div class="doc-carousel" id="children-carousel">
+              <div class="carousel-slide"><img src="img/child/boy.png" alt="Bolalar o'rindig'i misol 1"><p class="carousel-caption">Bo'yi 150 smdan baland</p></div>
+              <div class="carousel-slide"><img src="img/child/good.png" alt="Bolalar o'rindig'i misol 2"><p class="carousel-caption">To'g'ri. Remen yelka ustidan o'tadi.</p></div>
+              <div class="carousel-slide"><img src="img/child/not_good.png" alt="Bolalar o'rindig'i misol 3"><p class="carousel-caption">Noto'g'ri. Remen bo'yin ustidan o'tadi.</p></div>
+            </div>
+            <div class="carousel-indicators" id="children-indicators">
+              <button class="indicator active" data-index="0"></button>
+              <button class="indicator" data-index="1"></button>
+              <button class="indicator" data-index="2"></button>
+            </div>
+            <div class="carousel-arrows">
+              <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div class="rec-content">Agar mijozda bolalar o'rindig'i bo'lmasa – buyurtmani bekor qilishni so'rang. Agar mijoz bekor qilishdan bosh tortsa, o'z joyingizda qoling. Qo'llab-quvvatlash xizmatiga qo'ng'iroq qiling, vaziyatni tushuntiring va buyurtma avtomatik ravishda bekor bo'lishini kuting.</div>
+          </div>
+
+          <div class="age-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div><strong>12 yoshgacha bo'lgan, bo'yi 150 smdan baland va vazni 36 kgdan og'ir bolalar orqa o'rinda oddiy remen bilan o'tirishi mumkin.</strong></div>
+          </div>
+        </div>
+
+       <div class="fine-item">
+  <h3>Mast holat yoki tibbiy ko'rikdan bosh tortish</h3>
+  <p>Jarima: <strong class="price">145 000 ₽</strong> + 1,5–2 yilga huquqdan mahrum qilish. <strong>Har doim tibbiy ko'rikdan o'tishga rozi bo'ling!</strong></p>
+
+  <div class="fine-image-wrapper" style="margin-top: 16px;">
+    <img src="img/alko/alko.png" alt="Tibbiy ko'rik" class="fine-image">
+  </div>
+    <p>Ba'zi dori-darmonlar reaktsiyaga ta'sir qiladi. Qabul qilishdan oldin ko'rsatmani tekshiring.</p>
+  <div class="meds-block">
+    <p class="danger">⛔ Ta'qiqlanadi!</p>
+    <p>Andipal, Bellataminal, Valokordin, Valoserdin, Kaffetin, Korvaldin, Korvalol, Omnopon, Pentabufen, Pentalgin-N, Pentanov, Plivalgin, Sedal, Sedalgin Neo, Solpadein, Tedein, Teofedrin, Terpinkod, Toff Plus</p>
+    <p class="warning-text">⚠️ Ehtiyot bo'ling!</p>
+    <p>Alprazolam, Antigrippin, Ataraks, Gabapentin, Diazepam, Dimedrol, Lavokodin, Loperamid, Sirop (spirtli), Suprastin, Tavegil, Telfast, Fenazepam, Fenibut, Setrin va boshq.</p>
+  </div>
+</div>
+
+       <div class="fine-item">
+  <h3>Ta'qiqlovchi signalda o'tish / stop-chiziqni kesib o'tish</h3>
+  <p>Jarima: <strong class="price">7 500 ₽</strong>.</p>
+  
+  <p><strong>Sariq signal harakatni ta'qiqlaydi.</strong> Agar xavfsiz to'xtash mumkin bo'lsa, chiziqgacha to'xtang.</p>
+  
+  <div class="recommendation-box">
+    <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="rec-content">
+      <p><strong>Buzuvchilik deb hisoblanadi:</strong></p>
+      <ul class="check-list" style="margin: 8px 0 0 16px; padding-left: 8px;">
+        <li>Qizil yoki sariq signalda svetofordan o'tish</li>
+        <li>Stop-chiziqni mashinaning old qismi bilan kesib o'tish</li>
+        <li>Ta'qiqlovchi tartibga soluvchining belgisida stop-chiziqdan chiqish</li>
+      </ul>
+    </div>
+  </div>
+  
+  <p style="margin-top: 12px;"><strong>Maslahat:</strong> Chorrahaga yaqinlashganda, tezlikni oldindan kamaytiring. Agar sariq yonsa – tezlashtirmang, to'xtang.</p>
+</div>
+
+        <div class="fine-item">
+          <h3>Avtobus yo'lagida "g'isht" belgisiga qarshi harakat</h3>
+          <p>Jarima: <strong class="price">4 500 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/brick/brick.png" alt="G'isht" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3><img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> belgisi ostida to'xtash</h3>
+          <p>Jarima: <strong class="price">4 500 ₽</strong>. <img src="img/taxi_parking/5_18.jpeg" alt="5.18" class="traffic-sign"> yoki <img src="img/taxi_parking/8_4_14.png" alt="8.4.14" class="traffic-sign"> bilan birlashganda taksi mashinalariga to'xtashga ruxsat beriladi.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park.png" alt="Taksi to'xtash joyi" class="fine-image">
+          </div>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park_2.png" alt="taksi to'xtash joyi 2" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Tezlikni oshirish</h3>
+          <ul>
+            <li>+20–40 km/soat: <strong class="price">750 ₽</strong></li>
+            <li>+40–60 km/soat: <strong class="price">1 500–2 250 ₽</strong></li>
+            <li>+60–80 km/soat: <strong class="price">3 000–3 750 ₽</strong> / 4–6 oyga huquqdan mahrum qilish</li>
+            <li>+80 km/soat va undan yuqori: <strong class="price">7 500 ₽</strong> / 6 oyga huquqdan mahrum qilish</li>
+          </ul>
+          <p>Chegaralar: turar joylar – 20, shahar – 60, ChKAD/magistrallar – 80, MKAD – 100.</p>
+        </div>
+
+        <div class="fine-item">
+          <h3>Yo'l chetida harakatlanish</h3>
+          <p>Jarima: <strong class="price">2 250 ₽</strong>. Yo'l chetida harakatlanish halokatli vaziyat yaratishga teng. YTH sodir bo'lganda aybdor siz bo'lasiz.</p>
+        </div>
+
+       <div class="fine-item">
+  <h3>Remen taqilmagan</h3>
+  <p>Jarima: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Yo'lovchilar uchun javobgarlik haydovchiga yuklanadi.</p>
+</div>
+
+<div class="fine-item">
+  <h3>Haydash paytida telefon ishlatish</h3>
+  <p>Jarima: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Telefon ushlagich va garnitura (quloqchin) ishlating</p>
+</div>
+
+        <!-- Pullik to'xtash joylari haqida yangi bo'lim -->
+        <div class="fine-item" style="margin-top: 20px;">
+          <h3>To'lanmagan to'xtash joyi</h3>
+          <p>Jarima: <strong class="price">50 000 ₽</strong></p>
+          
+          <div class="parking-info-section">
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/toll_park.png" alt="Pullik to'xtash joyi belgilari" class="parking-image">
+              <p class="parking-caption">Pullik to'xtash joyi belgilari</p>
+            </div>
+
+            <div class="parking-text">
+              <p>Yodingizda bo'lsin: pullik to'xtash joyi belgisi har doim o'rnatilmaydi. Ba'zida faqat ko'k chiziq bo'ladi. Xato qilmaslik uchun to'xtashdan oldin Yandeks Navigator, Yandeks Pro yoki "Rossiya to'xtash joylari" ilovasini oching – u yerda joy pullik yoki yo'qligi aniq ko'rsatilgan.</p>
+            </div>
+
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/blue.jpeg" alt="Pullik to'xtash joyi chizig'i" class="parking-image">
+              <p class="parking-caption">Pullik to'xtash joyi chizig'i</p>
+            </div>
+
+            <div class="parking-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><strong>Bepul to'xtash vaqti – dastlabki 5 daqiqa!</strong></div>
+            </div>
+
+            <div class="parking-reminder danger-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div><strong>ChKAD ichida bepul to'xtash joylari yo'q.</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 13. Ilovalarni sozlash -->
+    <section class="accordion-block" id="apps">
+      <div class="accordion-header"><h2>To'xtash joyi to'lovini to'lash uchun ilovalarni sozlash</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <!-- Yandeks PRO -->
+        <h3>Yandeks PRO</h3>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="yandex-pro-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/1.png" alt="Qatlam belgisini bosing"><p class="carousel-caption">"Qatlamlar" belgisini bosing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/2.png" alt="To'xtash joyi rejimini yoqing"><p class="carousel-caption">To'xtash joylarini ko'rsatish rejimini yoqing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/3.png" alt="Xaritada pullik to'xtash joylari paydo bo'ladi"><p class="carousel-caption">Xaritada pullik to'xtash joylari zonalari va to'xtashga ta'qiq qilingan joylar paydo bo'ladi</p></div>
+          </div>
+          <div class="carousel-indicators" id="yandex-pro-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Rossiya to'xtash joylari ilovasi - Ro'yxatdan o'tish -->
+        <h3 style="margin-top: 24px;">"Rossiya to'xtash joylari" ilovasi</h3>
+
+        <div class="app-download-buttons">
+          <a href="https://apps.apple.com/bm/app/парковки-россии/id1434426876" target="_blank" class="download-btn">
+            <img src="img/logo/appstore.svg" alt="App Store" class="store-icon">
+            <span>App Store</span>
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/playmarket.svg" alt="Google Play" class="store-icon">
+            <span>Google Play</span>
+          </a>
+
+          <a href="https://appgallery.huawei.com/#/app/C101992459?appId=C101992459&source=appshare&subsource=C101992459" target="_blank" class="download-btn">
+            <img src="img/logo/appgallery.svg" alt="AppGallery" class="store-icon">
+            <span>AppGallery</span>
+          </a>
+
+          <a href="https://apps.rustore.ru/app/ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/rustore.svg" alt="RuStore" class="store-icon">
+            <span>RuStore</span>
+          </a>
+        </div>
+
+        <p style="margin-top: 16px;"><strong>Sozlash:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-reg-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/4.png" alt="Balansni to'ldirish tugmasini bosing"><p class="carousel-caption">Balansni to'ldirish tugmasini bosing (boshida 0 ₽ ko'rinadi)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/5.png" alt="To'ldirish summasini tanlang"><p class="carousel-caption">To'ldirish summasini tanlab, to'ldirish tugmasini bosing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/6.png" alt="To'lash usulini tanlang"><p class="carousel-caption">To'lash usulini tanlang (SBP, Bank kartasi yoki telefon raqamidan yechish)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/7.png" alt="Mashina qo'shish tugmasini bosing"><p class="carousel-caption">"Mashina qo'shish" tugmasini bosing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/8.png" alt="Mashina raqamini kiriting"><p class="carousel-caption">Mashina raqamini kiriting. Rus harflaridan foydalaning</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/9.png" alt="Tayyor tugmasini bosing"><p class="carousel-caption">"Tayyor" tugmasini bosing</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-reg-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Qanday to'lash kerak -->
+        <p style="margin-top: 16px;"><strong>Qanday to'lash kerak:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-pay-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/10.png" alt="Yandeks PRO-da to'xtash joyini tanlang"><p class="carousel-caption">"Yandeks PRO" ilovasida kerakli to'xtash joyini tanlang. Pastda to'xtash joyi raqami ko'rinadi</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/11.png" alt="Rossiya to'xtash joylari ilovasiga kiring"><p class="carousel-caption">"Rossiya to'xtash joylari" ilovasiga kirib, yuqorida yoki pastda qidiruvni bosing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/12.png" alt="To'xtash joyi raqamini kiriting"><p class="carousel-caption">Qidiruvga "Yandeks PRO" ilovasida ko'rsatilgan to'xtash joyi raqamini yozing</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/13.png" alt="To'xtatish tugmasini bosing"><p class="carousel-caption">"To'xtatish" tugmasini bosing</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-pay-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+          </div>
+        </div>
+
+        <p style="margin-top: 12px;"><em>Odatda to'xtash vaqti 1 soatga tanlanadi. Vaqtni kattalashtirish yoki kamaytirish mumkin.</em></p>
+        <p><em>To'xtash vaqti tugashidan 15 daqiqa oldin ilova vaqtni uzaytirishni taklif qiladi.</em></p>
+        <p><em>Kun oxirigacha boshlanish vaqtini, mashina raqamini va to'xtash joyini o'zgartirish mumkin. O'zgarishlarni faqat sozlamalarda kiritish mumkin, agar to'xtash joyi oldindan to'langan bo'lsa.</em></p>
+
+        <!-- SMS orqali to'lash -->
+        <div class="info-block" style="margin-top: 20px;">
+          <h3>7757 raqamiga SMS-xabar</h3>
+          <ol class="step-list" style="margin-top: 10px;">
+            <li>To'lash uchun <strong>7757</strong> raqamiga quyidagi matn bilan SMS yuboring: <code>to'xtash joyi raqami*mashina raqami*soat soni 1dan 24gacha</code>
+              <div class="example-box">Misol: <code>1004*А123АА199*3</code></div>
+            </li>
+            <li>To'xtash vaqtini uzaytirish uchun – <code>X[soat soni]</code> matni bilan
+              <div class="example-box">Misol: <code>X2</code></div>
+            </li>
+            <li>To'xtash vaqtini muddatidan oldin to'xtatish uchun – <code>S</code> yoki <code>С</code> matni bilan
+              <div class="example-box">Misol: <code>S</code></div>
+            </li>
+          </ol>
+          <div class="refund-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div>Foydalanilmagan to'xtash vaqti uchun to'lov to'xtash hisobingizga qaytariladi. <strong>Xizmat ko'rsatilgani haqidagi SMS-hisobotni albatta kuting!</strong></div>
+          </div>
+        </div>
+
+        <!-- Muhim -->
+        <div class="info-block" style="margin-top: 16px;">
+          <h3>Muhim</h3>
+          <p><strong>Bepul to'xtash vaqti – dastlabki 5 daqiqa!</strong></p>
+          <p>Pullik to'xtash joyi belgisi bo'lmasligi mumkin, faqat chiziq bo'lishi mumkin. Holatni Yandeks.Navigator, Yandeks.PRO yoki "Rossiya to'xtash joylari" ilovasidan tekshiring.</p>
+          <p class="danger"><strong>ChKAD ichida bepul to'xtash joylari yo'q.</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Noqonuniy takliflar haqida ogohlantirish -->
+    <section class="accordion-block" id="illegal-warning">
+      <div class="accordion-header"><h2>Qonuniy ishlang</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="warning-box">
+          <p><strong>"Yetkazish" rejimida yo'lovchi tashish ta'qiqlanadi.</strong></p>
+          <p><strong>"Taksi" rejimida yuk tashish ta'qiqlanadi.</strong></p>
+          <p>"Qo'shimcha ishlash" yoki "paket yetkazish" takliflaridan ehtiyot bo'ling. Bu ko'pincha noqonuniy sxemalarni yashiradi. Politsiya va xavfsizlik xizmatlari shubhali harakatlarni nazorat qiladi.</p>
+          <p class="danger"><strong>Bosh torting, dispetcherga xabar bering. Qonuniy ishlang!</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Aloqa (YIG'ILMAYDI) -->
+    <section class="accordion-block static-block" id="contacts">
+      <div class="accordion-header static-header"><h2>Aloqa</h2></div>
+      <div class="accordion-body">
+        
+        <!-- Karusel 1: Nahabino -->
+        <div class="contacts-carousel-wrapper">
+          <h3 class="carousel-location-title">📍 Moskva viloyati, Nahabino sh., Krasnoarmeyskaya ko'ch., 61 B</h3>
+          <a href="https://yandex.ru/maps/?text=Московская+область+Нахабино+Красноармейская+61Б" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Navigatorda oching</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-1">
+            
+            <!-- Qayrat - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Qayrat</div>
+              <div class="operator-actions">
+                <a href="tel:+79153214530" class="action-btn phone" aria-label="Qo'ng'iroq qilish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79153214530" target="_blank" class="action-btn whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79153214530" target="_blank" class="action-btn telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Rinat - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Rinat</div>
+              <div class="operator-actions">
+                <a href="tel:+79261868292" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79261868292" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79261868292" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Altynbek - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Altynbek</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775461" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775461" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775461" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">dush–jum: 9:00–20:00 <span class="hours-note">(shanba – dam olish)</span></div>
+            </div>
+
+            <!-- Gafar - Turkmaniston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tm.svg" alt="Turkmaniston"></div>
+              <div class="operator-name">Gafar</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676492" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676492" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676492" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Parviz - Tojikiston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tj.svg" alt="Tojikiston"></div>
+              <div class="operator-name">Parviz</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609187" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609187" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609187" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(shanba – dam olish)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-1">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Karusel 2: Moskva -->
+        <div class="contacts-carousel-wrapper" style="margin-top: 32px;">
+          <h3 class="carousel-location-title">📍 Moskva sh., Volokolamskoye shosse, 142-uy, 1-bino</h3>
+          <a href="https://yandex.ru/maps/?text=Москва+Волоколамское+шоссе+142+стр1" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Navigatorda oching</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-2">
+            
+            <!-- Adilet 1 - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Adilet K.</div>
+              <div class="operator-actions">
+                <a href="tel:+79995773095" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995773095" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995773095" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Argen - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Argen</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775453" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775453" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775453" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(shanba – dam olish)</span></div>
+            </div>
+
+            <!-- Adilet 2 - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Adilet Z.</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676678" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676678" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676678" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">dush–jum: 9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Muratbek - Qirg'iziston -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Qirg'iziston"></div>
+              <div class="operator-name">Muratbek</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775897" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775897" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775897" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(shanba – dam olish)</span></div>
+            </div>
+
+            <!-- Yuriy - Rossiya -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Rossiya"></div>
+              <div class="operator-name">Yuriy</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775905" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775905" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775905" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(juma – dam olish)</span></div>
+            </div>
+
+            <!-- Aleksandr 1 - Rossiya -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Rossiya"></div>
+              <div class="operator-name">Aleksandr</div>
+              <div class="operator-specialty">taksi</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609167" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609167" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609167" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+            <!-- Gans - Rossiya -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Rossiya"></div>
+              <div class="operator-name">Gans</div>
+              <div class="operator-actions">
+                <a href="tel:+79251725604" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79251725604" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79251725604" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(shanba – dam olish)</span></div>
+            </div>
+
+            <!-- Aleksandr 2 - Rossiya -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Rossiya"></div>
+              <div class="operator-name">Aleksandr</div>
+              <div class="operator-specialty">yetkazish/biznes</div>
+              <div class="operator-actions">
+                <a href="tel:+79250088543" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79250088543" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79250088543" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(yakshanba – dam olish)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-2">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Oldingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Keyingi slayd">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SNEZHOK taksi parki. Haydovchilar uchun dolzarb ko'rsatmalar.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
