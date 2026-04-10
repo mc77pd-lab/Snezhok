@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ky" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNEZHOK такси парки</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+   <div class="logo">
+    <img src="img/logo/logo2.svg" alt="SNEZHOK" class="logo-image">
+</div>
+
+    <div class="header-controls">
+      <div class="lang-dropdown">
+        <button class="lang-btn" id="lang-toggle" aria-label="Тилди тандоо">
+          <div id="current-flag-container"></div>
+          <span id="current-lang-label">Кыргызча</span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+               <div class="dropdown-menu" id="lang-menu" role="listbox">
+          <a class="lang-option" href="index.html" role="option"><img class="flag" src="img/flags/ru.svg" alt="Орусия"><span>Орусча</span></a>
+          <a class="lang-option" href="kg.html" role="option"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"><span>Кыргызча</span></a>
+          <a class="lang-option" href="kz.html" role="option"><img class="flag" src="img/flags/kz.svg" alt="Казакстан"><span>Қазақша</span></a>
+          <a class="lang-option" href="tj.html" role="option"><img class="flag" src="img/flags/tj.svg" alt="Тажикстан"><span>Тоҷикӣ</span></a>
+          <a class="lang-option" href="tm.html" role="option"><img class="flag" src="img/flags/tm.svg" alt="Түркмөнстан"><span>Türkmençe</span></a>
+          <a class="lang-option" href="uz.html" role="option"><img class="flag" src="img/flags/uz.svg" alt="Өзбекстан"><span>Oʻzbekcha</span></a>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="theme-toggle" aria-label="Теманы алмаштыруу">
+        <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 1. Аренда шарттары -->
+    <section class="accordion-block" id="conditions">
+      <div class="accordion-header"><h2>Аренда шарттары</h2><button class="accordion-toggle" aria-expanded="true"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Аренданын эң кыска мөөнөтү – <strong>14 күн</strong>.</li>
+          <li>Аренданын биринчи күнү – <strong>акысыз</strong> (жаңы айдоочулар үчүн).</li>
+          <li>Унааны тапшыруу: дүйшөмбү – жума.</li>
+          <li>Унааны тапшыраардан <strong>3 күн мурун</strong> колонна башчысына кабарлоо керек.</li>
+          <li>Аренда акысы күн сайын саат <strong>12:00дө</strong> чегерилет.</li>
+          <li>Парк комиссиясы – <strong>3%</strong>.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Компаниянын ички сактандыруусу (КАСКО)</h3>
+          <p>Баасы: <strong>+100 ₽/күн</strong>.</p>
+          <p>Унаа олуттуу зыян тартса, айдоочу <strong>20 000 ₽</strong>дан ашпаган төлөмдү гана төлөйт, калган чыгымдарды компания көтөрөт.</p>
+          <p class="warning-text">Бул кызмат төмөнкү учурларда <strong>иштебейт</strong>:</p>
+          <ul>
+            <li>унааны башка адамга берсеңиз;</li>
+            <li>мас абалында унаа айдап жатсаңыз;</li>
+            <li>жол эрежелерин олуттуу бузсаңыз;</li>
+            <li>унааны атайын бузсаңыз;</li>
+            <li>жол кырсыгы болгон жерден кетип калсаңыз;</li>
+            <li>жол кырсыгы жөнүндө документтер жок болсо;</li>
+            <li>унаа бузулган экенин билип туруп айдаган болсоңуз;</li>
+            <li>унааны жеке максаттарда колдонсоңуз.</li>
+          </ul>
+        </div>
+        <p><strong>Айдоочу төмөнкүлөр үчүн материалдык жоопкерчилик тартат:</strong> чийилген, сызган, ийилген жерлер, жүрүү бөлүгүнүн зыяны, шиналар, дисктер, айнектер жана башка зыяндар.</p>
+        <p>Айып пулдар жана ЦКАД, МСД жолдорунда жүрүү акысы айдоочунун мобилдик тиркемесинен автоматтык түрдө чегерилет. <strong>1 000 ₽</strong>дан ашкан айып пулдар күн сайын <strong>1 000 ₽</strong>дан чегерилет.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div class="rec-content"><strong>Тыюу салынат:</strong> унааны башка адамга берүү жана аны максатынан тышкары колдонуу.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Унааны текшерүү -->
+    <section class="accordion-block" id="car-inspect">
+      <div class="accordion-header"><h2>Унааны кабыл алуу учурунда текшерүү</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <h3>Сырткы көрүнүшү:</h3>
+        <ul class="check-list"><li>кузовдогу жабыштырылган элементтер;</li><li>зыяндардын бар-жогу (чийиктер, ийилген жерлер ж.б.);</li><li>салондун абалы;</li><li>дөңгөлөктөрдүн абалы;</li><li>алдыңкы айнектин бүтүндүгү.</li></ul>
+        <h3>Техникалык абалы:</h3>
+        <ul class="check-list"><li>майдын, тормоздук жана муздатуучу суюктуктардын деңгээли;</li><li>генератор кайышынын абалы;</li><li>аккумулятордун абалы.</li></ul>
+        <h3>Жарык приборлору:</h3>
+        <ul class="check-list"><li>габариттик чырактар, фаралар, бурулуш сигналдары, тормоз чырактары, артка жүрүү чырактары.</li></ul>
+        <h3>Керектүү жабдуулар:</h3>
+        <ul class="check-list"><li>чатырдагы жана капталдардагы такси белгилери;</li><li>авариялык токтотуу белгиси, өчүргүч, дары-дармек кутучасы;</li><li>запас дөңгөлөк, домкрат, гайка ачкыч.</li></ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <div class="rec-content">Унааны кабыл алууда документтерди, алардын жарамдуулук мөөнөтүн текшериңиз, каттоо номерлерин документтер менен салыштырыңыз.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Документтер (КАРУСЕЛЬ) -->
+    <section class="accordion-block" id="documents">
+      <div class="accordion-header"><h2>Өзүңүз менен алып жүрүүчү документтер</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="doc-carousel-wrapper">
+          <div class="doc-carousel" id="doc-carousel">
+            <div class="carousel-slide"><img src="img/driver_license/driver_license.png" alt="Айдоочулук күбөлүк"><p class="carousel-caption">Айдоочулук күбөлүк <span class="text-secondary">(жарамдуулук мөөнөтүн текшериңиз)</span></p></div>
+            <div class="carousel-slide"><img src="img/sts/sts_2.jpg" alt="Каттоо күбөлүгү"><p class="carousel-caption">Каттоо күбөлүгү (СТС) <span class="text-secondary">(жарамдуулук мөөнөтүн текшериңиз)</span></p></div>
+            <div class="carousel-slide"><img src="img/save/save.png" alt="ОСАГО сактандыруу полиси"><p class="carousel-caption">ОСАГО сактандыруу полиси <span class="text-secondary">(жарамдуулук мөөнөтүн текшериңиз)</span></p></div>
+            <div class="carousel-slide"><img src="img/diagnostic/diag_card.png" alt="Диагностикалык карта"><p class="carousel-caption">Диагностикалык карта <span class="text-secondary">(жарамдуулук мөөнөтүн текшериңиз)</span></p></div>
+            <div class="carousel-slide"><img src="img/road_list/road_list.png" alt="Толтурулган жол баракчасы"><p class="carousel-caption">Толтурулган жол баракчасы</p></div>
+          </div>
+          <div class="carousel-indicators" id="doc-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Жол баракчасын алуу тартиби -->
+    <section class="accordion-block" id="waybill">
+      <div class="accordion-header"><h2>Жол баракчасын алуу тартиби</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Паркка келгенде, механиктен унаа документтерин, ташуучунун картасын, жол баракчасын, чатырдагы белгини алыңыз. Алууну ырастоо үчүн <span class="highlight">колуңузду коюңуз</span>.</li>
+          <li>Медициналык текшерүүдөн өтүңүз (жалпы абал, дене табы, кан басымы, мас абалын текшерүү), жооптуу адамдын жанында <span class="highlight">убакытты</span> жана колуңузду коюңуз.</li>
+          <li>Механиктен унаа ачкычтарын алып, унааны текшересиз. Текшерүү аяктаган соң, механиктин жанында <span class="highlight">убакытты</span> жана колуңузду коюңуз.</li>
+          <li>Унааны техникалык жактан жарамдуу абалда кабыл алганыңыз жөнүндө <span class="highlight">колуңузду коюңуз</span>.</li>
+          <li>Такси белгиси, жол баракчасы же ташуучу картасы жоголгон учурдагы аракеттер жөнүндө маалымдуу экениңизди ырастоо үчүн <span class="highlight">колуңузду коюңуз</span>.</li>
+          <li>Парктан чыгууда чыккан <span class="highlight">убакытты</span> белгилеңиз.</li>
+          <li>Чыгуу учурундагы унаанын <span class="highlight">километражын</span> белгилеңиз.</li>
+        </ol>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Жол баракчасын туура эмес толтуруу <strong>100 000 ₽</strong> айып пул жана унааны <strong>2 айга</strong> чейин айып туракка алуу менен жазаланат.</div>
+        </div>
+
+        <div class="info-note">
+          <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>Кээ бир учурларда механик жана медициналык кызматкер айдоочуга өзү келиши мүмкүн.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Күн сайын текшерүү -->
+    <section class="accordion-block" id="daily-inspect">
+      <div class="accordion-header"><h2>Күн сайын унааны текшерүү</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Унааны айлантып басып, зыяндар жок экенине ынаныңыз.</li>
+          <li>Дөңгөлөктөрдү текшериңиз.</li>
+          <li>Суюктуктардын деңгээлин, кайыштагы чийиктерди, аккумулятордун абалын жана клеммалардын бекемдигин, агып жаткан жерлер жок экенин текшериңиз.</li>
+          <li>Документтерди жана алардын жарамдуулук мөөнөтүн текшериңиз.</li>
+          <li>Унаанын тазалыгына ынаныңыз.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Эгер токтоочу жайда зыян тапсаңыз:</h3>
+          <ol class="step-list"><li>Колонна башчысына чалыңыз.</li><li>Унааны жылдырбай, бардык тарабынан сүрөткө тартыңыз, зыяндарды жалпы жана жакындан түшүрүңүз.</li><li>Окуяны расмийлештирүү үчүн полиция чакырыңыз.</li></ol>
+        </div>
+
+        <!-- Унаа сүрөттөрү карусели -->
+        <div class="doc-carousel-wrapper" style="margin-top: 20px;">
+          <div class="doc-carousel" id="inspection-carousel">
+            <div class="carousel-slide"><img src="img/auto/granta.png" alt="lada_granta"><p class="carousel-caption">Lada Granta</p></div>
+            <div class="carousel-slide"><img src="img/auto/h5.png" alt="Hongqi_h5"><p class="carousel-caption">Hongqi H5</p></div>
+            <div class="carousel-slide"><img src="img/auto/jac.png" alt="jac_j7"><p class="carousel-caption">Jac J7</p></div>
+            <div class="carousel-slide"><img src="img/auto/jetta.png" alt="Volkswagen_jetta"><p class="carousel-caption">Volkswagen Jetta</p></div>
+            <div class="carousel-slide"><img src="img/auto/kaiyi.png" alt="kaiyi_e5"><p class="carousel-caption">Kaiyi E5</p></div>
+            <div class="carousel-slide"><img src="img/auto/moscvich.png" alt="moscvich"><p class="carousel-caption">Москвич 3</p></div>
+            <div class="carousel-slide"><img src="img/auto/polo.png" alt="Volkswagen_polo"><p class="carousel-caption">Volkswagen Polo</p></div>
+            <div class="carousel-slide"><img src="img/auto/rapid.png" alt="Skoda_rapid"><p class="carousel-caption">Skoda Rapid</p></div>
+            <div class="carousel-slide"><img src="img/auto/baic.png" alt="baic_e5plus"><p class="carousel-caption">Baic E5 plus</p></div>
+          </div>
+          <div class="carousel-indicators" id="inspection-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+            <button class="indicator" data-index="8"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Жумуш боюнча кеңештер -->
+    <section class="accordion-block" id="work-tips">
+      <div class="accordion-header"><h2>Жолдо иштөө боюнча кеңештер</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p>Иштөөгө эң пайдалуу убакыт: <strong>05:00–11:00</strong> жана <strong>15:00–20:00</strong>. Бул сааттарда суроо-талап эң жогору.</p>
+        <p>Сиздин ыңгайлуулугуңуз жана коопсуздугуңуз эң маанилүү. Чарчоо көңүл бурууну төмөндөтөт, ошондуктан тыныгуу жасап, жетиштүү уктаңыз.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Унааны кечинде, мурунтан күйүүчү май куюп, жууп коюуну сунуштайбыз. Бул эртең мененки убакытты үнөмдөйт жана жолго чыгуу алдында шашпоого жардам берет.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Техникалык кароо жана оңдоо -->
+    <section class="accordion-block" id="tech-service">
+      <div class="accordion-header"><h2>Техникалык кароо жана оңдоо</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Техникалык кароо ар <strong>10 000 км</strong> сайын өткөрүлөт.</li>
+          <li>Оңдоо жана тейлөө – <strong>такси паркинин автосервисинде гана</strong>.</li>
+          <li>Техникалык кароого жана оңдоого жазылуу – баруудан <strong>3 күн мурун</strong>.</li>
+          <li>Өз алдынча аралашуу (оңдоо, запчасть алмаштыруу, май кошуу) – <strong>колонна башчысы менен макулдашкандан кийин гана</strong>.</li>
+        </ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <div class="rec-content">Унааны кабыл алууда колонна башчысынан техникалык кароого канча километрден кийин келишиңиз керектигин сураңыз.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ГИБДД жана МАДИ менен баарлашуу -->
+    <section class="accordion-block" id="police-rules">
+      <div class="accordion-header"><h2>ГИБДД жана МАДИ менен баарлашуу эрежелери</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Тынч, шашпай, сылык баарлашыңыз.</li>
+          <li>Чыр чыгарбаңыз (дөпүрөө, үн көтөрүү).</li>
+          <li>«Негизде?», «Токтотуу себеби?», «Сиздин укугуңуз жок» деген сыяктуу сөздөрдү колдонбоңуз.</li>
+          <li>Эгер протокол толтурулуп жатса, себебин түшүндүрүп берүүсүн сылык сураңыз.</li>
+          <li>Эгер түшүнбөсөңүз – котормочу сураңыз. <strong>Мааниси түшүнүксүз документтерге кол койбоңуз.</strong></li>
+          <li>Протокол толтурулган дароо колонна башчысына кабарлаңыз.</li>
+          <li>Кызматкерлердин аракеттеринин мыйзамдуулугуна ишенбесеңиз – колонна башчысына чалыңыз!</li>
+        </ul>
+        <div class="info-block">
+          <h3>МАДИ текшерүүсү</h3>
+          <p>МАДИ кызматкерлери такси белгилеринин, ташуучу картасынын, жол баракчасынын бар экенин жана ташуу коопсуздугун текшере алат.</p>
+          <p><strong>Маанилүү:</strong> МАДИ кызматкери документтерди текшерүү үчүн унааны токтотууга укугу жок. Муну полиция кызматкерлери гана кылат. Бирок эгер МАДИ кызматкери өзү келип документ сураса – бериңиз, талашпаңыз.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Москва облусунан чыгуу -->
+    <section class="accordion-block" id="outside-mo">
+      <div class="accordion-header"><h2>Москва облусунан чыгуу</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <div class="section-image-wrapper">
+          <img src="img/get_out/out.png" alt="Москва облусунан чыгуу" class="section-image">
+        </div>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Москва облусунан чыгуудан мурун колонна башчысына чалуу <strong>милдеттүү</strong>.</div>
+        </div>
+        <p>Эгер Москва облусунан тышкары жерде унаа бузулса же жол кырсыгы болсо, эвакуатор акысын <strong>айдоочу</strong> төлөйт.</p>
+      </div>
+    </section>
+
+    <!-- 10. Жол кырсыгы -->
+    <section class="accordion-block" id="accident">
+      <div class="accordion-header"><h2>Жол кырсыгы болгондо эмне кылуу керек</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Токтоңуз, авариялык сигналды күйгүзүңүз, белгини коюңуз. Шаардан тышкары жерде жарык чагылдыруучу жилет кийиңиз.</li>
+          <li>Эгер жаракат алгандар болсо – тез жардам чакырыңыз (<strong>103</strong> же <strong>112</strong>). Эгер билбесеңиз, биринчи жардам көрсөтпөңүз.</li>
+          <li>Жол кырсыгы болгон жерди, бардык унаалардын зыяндарын, номерлерин сүрөткө тартып, колонна башчысына жөнөтүңүз.</li>
+          <li>ГИБДД кызматкерин күтүңүз.</li>
+        </ol>
+        <div class="info-block">
+          <h3>Эгер ГИБДД кызматкери жолду бошотууну сураса:</h3>
+          <ul><li>Эрежелерди сактап токтоңуз. <img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> белгисинин астына унаа коюңуз.</li><li>Акылуу токтоочу жай болсо – акысын төлөңүз.</li><li>Башка жол эрежелерин бузбаңыз.</li></ul>
+        </div>
+        <h3>Европротокол толтуруу шарттары:</h3>
+        <ul><li>Колонна башчысы европротоколго макул болгон;</li><li>Жол кырсыгында 2 гана унаа, жаракат алгандар жок;</li><li>Эки айдоочунун тең ОСАГОсу жарамдуу;</li><li>Экөө тең европротоколго макул, инфраструктура зыян тартпаган, унаалардын орду өзгөрбөгөн.</li></ul>
+        <p><em>Европротокол – акыркы чара. ГИБДД аркылуу расмийлештирүүгө аракет кылыңыз.</em></p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Европротокол толтурулгандан кийин, экинчи катышуучу биринчи кеткенче күтүңүз.</div>
+        </div>
+        <p class="danger">Сиздин күнөөңүз менен болгон жол кырсыгында эвакуатор акысын сиз төлөйсүз.</p>
+      </div>
+    </section>
+
+    <!-- 11. Унаа бузулганда -->
+    <section class="accordion-block" id="breakdown">
+      <div class="accordion-header"><h2>Жолдо унаа бузулганда</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Жол эрежелерин жана коопсуздук техникасын сактап токтоңуз.</li>
+          <li>Авариялык токтотуу белгисин коюңуз.</li>
+          <li>Жолоочуларды түшүрүңүз.</li>
+          <li>Механик же эвакуатор чакыруу үчүн колонна башчысына чалыңыз.</li>
+        </ol>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Эгер акылуу токтоочу жайда токтоого мажбур болсоңуз – акысын төлөңүз. Кийин компенсация аласыз.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Айып пулдар -->
+    <section class="accordion-block" id="fines">
+      <div class="accordion-header"><h2>Айып пулдар</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p class="warning-text">Суммалар жеңилдиктерсиз толук көрсөтүлдү. Көп айып пулдарды 25–50% жеңилдик менен төлөсө болот.</p>
+        
+        <div class="fine-item">
+          <h3>Ташуучу картасы жок</h3>
+          <p>Айып пул: <strong class="price">30 000 ₽</strong>. Алдыңкы панелдин оң жагында болушу керек.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_card/taxi_card.png" alt="Ташуучу картасы" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Такси фонары же «шашка» жок</h3>
+          <p>Айып пул: <strong class="price">50 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_hat/taxi_hat.png" alt="Такси фонары" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Жумуштан кийин фонарды чечип, айдоочу тараптагы полго коюңуз. Ошентип фонарды уурдап кетпейт, жолго чыкканда орнотууну унутпайсыз. Фонарды багажникке салбаңыз.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Газонго жана тротуарга токтоо</h3>
+          <p>Айып пул: <strong class="price">300 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/grass/grass.png" alt="Газонго токтоо" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Унааны төрт дөңгөлөгү тең асфальтта тургандай кылып токтотуңуз. Жөө адамдар үчүн тротуарга жана бордюрго унаа коюңуз.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Балдарды ташуу эрежелерин бузуу</h3>
+          <p>Айып пул: <strong class="price">200 000 ₽</strong>. Балдар отургучу жок/туура эмес/туура эмес орнотулган же бала ремень тагылбаган.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/child/child_chair.png" alt="Балдар отургучу" class="fine-image">
+          </div>
+          <!-- Балдар карусели -->
+          <div class="doc-carousel-wrapper" style="margin-top: 16px;">
+            <div class="doc-carousel" id="children-carousel">
+              <div class="carousel-slide"><img src="img/child/boy.png" alt="Балдар отургучу мисал 1"><p class="carousel-caption">Бой 150 смден жогору</p></div>
+              <div class="carousel-slide"><img src="img/child/good.png" alt="Балдар отургучу мисал 2"><p class="carousel-caption">Туура. Ремень ийинден өтөт.</p></div>
+              <div class="carousel-slide"><img src="img/child/not_good.png" alt="Балдар отургучу мисал 3"><p class="carousel-caption">Туура эмес. Ремень моюндан өтөт.</p></div>
+            </div>
+            <div class="carousel-indicators" id="children-indicators">
+              <button class="indicator active" data-index="0"></button>
+              <button class="indicator" data-index="1"></button>
+              <button class="indicator" data-index="2"></button>
+            </div>
+            <div class="carousel-arrows">
+              <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div class="rec-content">Эгер кардарда балдар отургучу жок болсо – заказды жокко чыгарууну сураңыз. Эгер кардар жокко чыгаруудан баш тартса, ордуңузда калыңыз. Колдоо кызматына чалып, абалды түшүндүрүп, заказдын автоматтык түрдө жокко чыгарылышын күтүңүз.</div>
+          </div>
+
+          <div class="age-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div><strong>12 жашка чейинки, бою 150 смден жогору жана салмагы 36 кгдан оор балдар арткы орунда кадимки ремень менен отура алат.</strong></div>
+          </div>
+        </div>
+
+       <div class="fine-item">
+  <h3>Мас абалы же медициналык текшерүүдөн баш тартуу</h3>
+  <p>Айып пул: <strong class="price">145 000 ₽</strong> + 1,5–2 жылга укуктуу ажыратуу. <strong>Ар дайым медициналык текшерүүдөн өтүүгө макул болуңуз!</strong></p>
+
+  <div class="fine-image-wrapper" style="margin-top: 16px;">
+    <img src="img/alko/alko.png" alt="Медициналык текшерүү" class="fine-image">
+  </div>
+    <p>Кээ бир дарылар реакцияга таасир этет. Кабыл алуудан мурун инструкциясын текшериңиз.</p>
+  <div class="meds-block">
+    <p class="danger">⛔ Тыюу салынат!</p>
+    <p>Андипал, Беллатаминал, Валокордин, Валосердин, Каффетин, Корвалдин, Корвалол, Омнопон, Пентабуфен, Пенталгин-Н, Пентанов, Пливалгин, Седал, Седальгин Нео, Солпадеин, Тедеин, Теофедрин, Терпинкод, Тофф Плюс</p>
+    <p class="warning-text">⚠️ Сак болуңуз!</p>
+    <p>Алпразолам, Антигриппин, Атаракс, Габапентин, Диазепам, Димедрол, Лавокодин, Лоперамид, Сироптор (спирттүү), Супрастин, Тавегил, Телфаст, Феназепам, Фенибут, Цетрин ж.б.</p>
+  </div>
+</div>
+
+       <div class="fine-item">
+  <h3>Тыюу салынган сигналда өтүү / стоп-сызыкты кесип өтүү</h3>
+  <p>Айып пул: <strong class="price">7 500 ₽</strong>.</p>
+  
+  <p><strong>Сары сигнал кыймылды тыюу салат.</strong> Эгер коопсуз токтоо мүмкүн болсо, сызыкка чейин токтоңуз.</p>
+  
+  <div class="recommendation-box">
+    <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="rec-content">
+      <p><strong>Эмне бузуу деп эсептелет:</strong></p>
+      <ul class="check-list" style="margin: 8px 0 0 16px; padding-left: 8px;">
+        <li>Кызыл же сары сигналда светофордон өтүү</li>
+        <li>Стоп-сызыкты унаанын алдыңкы бөлүгү менен кесип өтүү</li>
+        <li>Тыюу салынган жөндөөчүнүн белгисинде стоп-сызыктан чыгуу</li>
+      </ul>
+    </div>
+  </div>
+  
+  <p style="margin-top: 12px;"><strong>Кеңеш:</strong> Кесилишке жакындаганда, ылдамдыгыңызды алдын ала азайтыңыз. Эгер сары күйүп калса – ылдамдатпаңыз, токтоңуз.</p>
+</div>
+
+        <div class="fine-item">
+          <h3>Автобус тилкесинде «кирпич» белгисине каршы кыймыл</h3>
+          <p>Айып пул: <strong class="price">4 500 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/brick/brick.png" alt="Кирпич" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3><img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> белгисинин астына токтоо</h3>
+          <p>Айып пул: <strong class="price">4 500 ₽</strong>. <img src="img/taxi_parking/5_18.jpeg" alt="5.18" class="traffic-sign"> же <img src="img/taxi_parking/8_4_14.png" alt="8.4.14" class="traffic-sign"> менен айкалышканда такси унааларына токтоого уруксат берилет.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park.png" alt="Такси токтоочу жай" class="fine-image">
+          </div>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park_2.png" alt="такси токтоочу жай 2" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Ылдамдыктан ашуу</h3>
+          <ul>
+            <li>+20–40 км/саат: <strong class="price">750 ₽</strong></li>
+            <li>+40–60 км/саат: <strong class="price">1 500–2 250 ₽</strong></li>
+            <li>+60–80 км/саат: <strong class="price">3 000–3 750 ₽</strong> / 4–6 айга укуктуу ажыратуу</li>
+            <li>+80 км/саат жана андан жогору: <strong class="price">7 500 ₽</strong> / 6 айга укуктуу ажыратуу</li>
+          </ul>
+          <p>Чектөөлөр: тургун жайлар – 20, шаар – 60, ТТК/магистралдар – 80, МКАД – 100.</p>
+        </div>
+
+        <div class="fine-item">
+          <h3>Жол четинде кыймылдоо</h3>
+          <p>Айып пул: <strong class="price">2 250 ₽</strong>. Жол четинде кыймылдоо авариялык кырдаал түзүүгө барабар. Жол кырсыгы болгон учурда күнөөлүү сиз болосуз.</p>
+        </div>
+
+       <div class="fine-item">
+  <h3>Ремень тагылбаган</h3>
+  <p>Айып пул: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Жолоочулар үчүн жоопкерчилик айдоочуга жүктөлөт.</p>
+</div>
+
+<div class="fine-item">
+  <h3>Айдоодо телефон колдонуу</h3>
+  <p>Айып пул: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Телефон кармагыч жана гарнитура (кулакчын) колдонуңуз</p>
+</div>
+
+        <!-- Акылуу токтоочу жайлар жөнүндө жаңы бөлүм -->
+        <div class="fine-item" style="margin-top: 20px;">
+          <h3>Төлөнбөгөн токтоочу жай</h3>
+          <p>Айып пул: <strong class="price">50 000 ₽</strong></p>
+          
+          <div class="parking-info-section">
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/toll_park.png" alt="Акылуу токтоочу жай белгилери" class="parking-image">
+              <p class="parking-caption">Акылуу токтоочу жай белгилери</p>
+            </div>
+
+            <div class="parking-text">
+              <p>Эсиңизде болсун: акылуу токтоочу жай белгиси ар дайым орнотулбайт. Кээде көк разметка гана болот. Ката кетирбөө үчүн, токтоордон мурун Яндекс Навигатор, Яндекс Про же «Орусия токтоочу жайлары» тиркемесин ачыңыз – ал жерде орун акылуу же жок экени так көрсөтүлөт.</p>
+            </div>
+
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/blue.jpeg" alt="Акылуу токтоочу жай разметкасы" class="parking-image">
+              <p class="parking-caption">Акылуу токтоочу жай разметкасы</p>
+            </div>
+
+            <div class="parking-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><strong>Акысыз токтоочу убакыт – алгачкы 5 мүнөт!</strong></div>
+            </div>
+
+            <div class="parking-reminder danger-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div><strong>ТТК ичинде акысыз токтоочу жайлар жок.</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 13. Тиркемелерди жөндөө -->
+    <section class="accordion-block" id="apps">
+      <div class="accordion-header"><h2>Токтоочу жай акысын төлөө үчүн тиркемелерди жөндөө</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <!-- Яндекс ПРО -->
+        <h3>Яндекс ПРО</h3>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="yandex-pro-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/1.png" alt="Кабаттар белгисин басыңыз"><p class="carousel-caption">«Кабаттар» белгисин басыңыз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/2.png" alt="Токтоочу жай режимин күйгүзүңүз"><p class="carousel-caption">Токтоочу жайларды көрсөтүү режимин күйгүзүңүз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/3.png" alt="Картада акылуу токтоочу жайлар пайда болот"><p class="carousel-caption">Картада акылуу токтоочу жай зоналары жана токтоого тыюу салынган жерлер пайда болот</p></div>
+          </div>
+          <div class="carousel-indicators" id="yandex-pro-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Парковки России тиркемеси - Каттоо -->
+        <h3 style="margin-top: 24px;">«Орусия токтоочу жайлары» тиркемеси</h3>
+
+        <div class="app-download-buttons">
+          <a href="https://apps.apple.com/bm/app/парковки-россии/id1434426876" target="_blank" class="download-btn">
+            <img src="img/logo/appstore.svg" alt="App Store" class="store-icon">
+            <span>App Store</span>
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/playmarket.svg" alt="Google Play" class="store-icon">
+            <span>Google Play</span>
+          </a>
+
+          <a href="https://appgallery.huawei.com/#/app/C101992459?appId=C101992459&source=appshare&subsource=C101992459" target="_blank" class="download-btn">
+            <img src="img/logo/appgallery.svg" alt="AppGallery" class="store-icon">
+            <span>AppGallery</span>
+          </a>
+
+          <a href="https://apps.rustore.ru/app/ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/rustore.svg" alt="RuStore" class="store-icon">
+            <span>RuStore</span>
+          </a>
+        </div>
+
+        <p style="margin-top: 16px;"><strong>Жөндөө:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-reg-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/4.png" alt="Балансты толтуруу баскычын басыңыз"><p class="carousel-caption">Балансты толтуруу баскычын басыңыз (башында 0 ₽ көрүнөт)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/5.png" alt="Толтуруу суммасын тандаңыз"><p class="carousel-caption">Толтуруу суммасын тандап, толтуруу баскычын басыңыз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/6.png" alt="Төлөө ыкмасын тандаңыз"><p class="carousel-caption">Төлөө ыкмасын тандаңыз (СБП, Банк картасы же телефон номеринен чегерүү)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/7.png" alt="Унаа кошуу баскычын басыңыз"><p class="carousel-caption">«Унаа кошуу» баскычын басыңыз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/8.png" alt="Унаа номерин киргизиңиз"><p class="carousel-caption">Унаа номерин киргизиңиз. Орус тамгаларын колдонуңуз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/9.png" alt="Даяр баскычын басыңыз"><p class="carousel-caption">«Даяр» баскычын басыңыз</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-reg-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Кантип төлөө керек -->
+        <p style="margin-top: 16px;"><strong>Кантип төлөө керек:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-pay-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/10.png" alt="Яндекс ПРОдо токтоочу жайды тандаңыз"><p class="carousel-caption">«Яндекс ПРО» тиркемесинде керектүү токтоочу жайды тандаңыз. Төмөндө токтоочу зонанын номери көрүнөт</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/11.png" alt="Парковки России тиркемесине кириңиз"><p class="carousel-caption">«Орусия токтоочу жайлары» тиркемесине кирип, жогору же төмөн издөөнү басыңыз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/12.png" alt="Токтоочу зона номерин киргизиңиз"><p class="carousel-caption">Издөөгө «Яндекс ПРО» тиркемесинде көрсөтүлгөн токтоочу зона номерин жазыңыз</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/13.png" alt="Токтотуу баскычын басыңыз"><p class="carousel-caption">«Токтотуу» баскычын басыңыз</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-pay-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+          </div>
+        </div>
+
+        <p style="margin-top: 12px;"><em>Демейкидей токтоочу убакыт 1 саатка тандалат. Убакытты чоңойтуу же кичирейтүүгө болот.</em></p>
+        <p><em>Токтоочу убакыт бүтүүдөн 15 мүнөт мурун тиркеме убакытты узартууну сунуштайт.</em></p>
+        <p><em>Күндүн аягына чейин баштоо убактысын, унаа номерин жана токтоочу зонаны өзгөртүүгө болот. Өзгөртүүлөрдү жөндөөлөрдө гана киргизүүгө болот, эгер токтоочу жай мурунтан төлөнгөн болсо.</em></p>
+
+        <!-- СМС аркылуу төлөө -->
+        <div class="info-block" style="margin-top: 20px;">
+          <h3>7757 номерине СМС-билдирүү</h3>
+          <ol class="step-list" style="margin-top: 10px;">
+            <li>Төлөө үчүн <strong>7757</strong> номерине төмөнкү текст менен СМС жөнөтүңүз: <code>токтоочу зона номери*унаа номери*саат саны 1ден 24кө чейин</code>
+              <div class="example-box">Мисалы: <code>1004*А123АА199*3</code></div>
+            </li>
+            <li>Токтоочу убакытты узартуу үчүн – <code>X[саат саны]</code> тексти менен
+              <div class="example-box">Мисалы: <code>X2</code></div>
+            </li>
+            <li>Токтоочу убакытты мөөнөтүнөн мурун токтотуу үчүн – <code>S</code> же <code>С</code> тексти менен
+              <div class="example-box">Мисалы: <code>S</code></div>
+            </li>
+          </ol>
+          <div class="refund-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div>Колдонулбаган токтоочу убакыт үчүн акча токтоочу эсебиңизге кайтарылат. <strong>Кызмат аткарылганы жөнүндө СМС-отчётту сөзсүз күтүңүз!</strong></div>
+          </div>
+        </div>
+
+        <!-- Маанилүү -->
+        <div class="info-block" style="margin-top: 16px;">
+          <h3>Маанилүү</h3>
+          <p><strong>Акысыз токтоочу убакыт – алгачкы 5 мүнөт!</strong></p>
+          <p>Акылуу токтоочу жай белгиси жок болушу мүмкүн, разметка гана болот. Статусту Яндекс.Навигатор, Яндекс.ПРО же «Орусия токтоочу жайлары» тиркемесинен текшериңиз.</p>
+          <p class="danger"><strong>ТТК ичинде акысыз токтоочу жайлар жок.</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Мыйзамсыз сунуштар жөнүндө эскертүү -->
+    <section class="accordion-block" id="illegal-warning">
+      <div class="accordion-header"><h2>Мыйзамдуу иштеңиз</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="warning-box">
+          <p><strong>«Жеткирүү» режиминде жолоочу ташууга тыюу салынат.</strong></p>
+          <p><strong>«Такси» режиминде буюм ташууга тыюу салынат.</strong></p>
+          <p>«Кошумча иштөө» же «пакет жеткирүү» сунуштарынан сак болуңуз. Бул көбүнчө мыйзамсыз схемаларды жашырат. Полиция жана коопсуздук кызматтары шектүү аракеттерди көзөмөлдөйт.</p>
+          <p class="danger"><strong>Баш тартыңыз, диспетчерге кабарлаңыз. Мыйзамдуу иштеңиз!</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Байланыштар (ачылбайт) -->
+    <section class="accordion-block static-block" id="contacts">
+      <div class="accordion-header static-header"><h2>Байланыштар</h2></div>
+      <div class="accordion-body">
+        
+        <!-- Карусель 1: Нахабино -->
+        <div class="contacts-carousel-wrapper">
+          <h3 class="carousel-location-title">📍 Москва обл., Нахабино ш., Красноармейская к., 61 Б</h3>
+          <a href="https://yandex.ru/maps/?text=Московская+область+Нахабино+Красноармейская+61Б" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Навигатордо ачуу</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-1">
+            
+            <!-- Кайрат - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Кайрат</div>
+              <div class="operator-actions">
+                <a href="tel:+79153214530" class="action-btn phone" aria-label="Чалуу"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79153214530" target="_blank" class="action-btn whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79153214530" target="_blank" class="action-btn telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Ринат - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Ринат</div>
+              <div class="operator-actions">
+                <a href="tel:+79261868292" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79261868292" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79261868292" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Алтынбек - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Алтынбек</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775461" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775461" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775461" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">жек–жума: 9:00–20:00 <span class="hours-note">(ишемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Гафар - Түркмөнстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tm.svg" alt="Түркмөнстан"></div>
+              <div class="operator-name">Гафар</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676492" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676492" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676492" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Парвиз - Тажикстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tj.svg" alt="Тажикстан"></div>
+              <div class="operator-name">Парвиз</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609187" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609187" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609187" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ишемби – эс алуу)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-1">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Карусель 2: Москва -->
+        <div class="contacts-carousel-wrapper" style="margin-top: 32px;">
+          <h3 class="carousel-location-title">📍 Москва ш., Волоколамское ш., 142-үй, 1-имарат</h3>
+          <a href="https://yandex.ru/maps/?text=Москва+Волоколамское+шоссе+142+стр1" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Навигатордо ачуу</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-2">
+            
+            <!-- Адилет 1 - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Адилет К.</div>
+              <div class="operator-actions">
+                <a href="tel:+79995773095" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995773095" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995773095" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Арген - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Арген</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775453" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775453" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775453" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ишемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Адилет 2 - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Адилет З.</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676678" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676678" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676678" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">жек–жума: 9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Муратбек - Кыргызстан -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Кыргызстан"></div>
+              <div class="operator-name">Муратбек</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775897" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775897" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775897" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ишемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Юрий - Орусия -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Орусия"></div>
+              <div class="operator-name">Юрий</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775905" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775905" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775905" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жума – эс алуу)</span></div>
+            </div>
+
+            <!-- Александр 1 - Орусия -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Орусия"></div>
+              <div class="operator-name">Александр</div>
+              <div class="operator-specialty">такси</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609167" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609167" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609167" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Ганс - Орусия -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Орусия"></div>
+              <div class="operator-name">Ганс</div>
+              <div class="operator-actions">
+                <a href="tel:+79251725604" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79251725604" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79251725604" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ишемби – эс алуу)</span></div>
+            </div>
+
+            <!-- Александр 2 - Орусия -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Орусия"></div>
+              <div class="operator-name">Александр</div>
+              <div class="operator-specialty">жеткирүү/бизнес</div>
+              <div class="operator-actions">
+                <a href="tel:+79250088543" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79250088543" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79250088543" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(жекшемби – эс алуу)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-2">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Мурунку слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Кийинки слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SNEZHOK такси парки. Айдоочулар үчүн актуалдуу нускамалар.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
