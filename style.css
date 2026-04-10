@@ -107,6 +107,31 @@ a:active {
   font-size: 1.15rem;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-image {
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .logo-image {
+    height: 75%;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-image {
+    height: 70%;
+    max-width: 120px;
+  }
 }
 
 .header-controls {
@@ -269,7 +294,7 @@ a:active {
   justify-content: space-between;
   align-items: center;
   padding: 16px 18px;
-  cursor: default;
+  cursor: pointer;
   border-bottom: 0.5px solid var(--separator);
 }
 
@@ -366,7 +391,8 @@ a:active {
 
 .check-list,
 .step-list {
-  padding-left: 18px;
+  padding-left: 28px;
+  margin-left: 4px;
 }
 
 .step-list {
@@ -379,6 +405,7 @@ a:active {
 
 .check-list li::marker {
   color: var(--accent);
+  margin-right: 8px;
 }
 
 .info-block {
@@ -560,6 +587,8 @@ code {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 0 6px;
+  margin: 0 -6px;
 }
 
 .doc-carousel::-webkit-scrollbar {
@@ -567,8 +596,8 @@ code {
 }
 
 .carousel-slide {
-  flex: 0 0 100%;
-  width: 100%;
+  flex: 0 0 calc(100% - 12px);
+  width: calc(100% - 12px);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -633,6 +662,91 @@ code {
   transform: scale(0.95);
 }
 
+/* ─── СТРЕЛКИ НАВИГАЦИИ КАРУСЕЛИ ─── */
+.carousel-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  opacity: 0.6;
+}
+
+.arrow-btn:hover {
+  opacity: 1;
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.arrow-btn:active {
+  transform: scale(0.95);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.arrow-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+@media (max-width: 600px) {
+  .carousel-arrows {
+    gap: 24px;
+    margin-top: 2px;
+  }
+  
+  .arrow-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .arrow-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+[data-theme="dark"] .arrow-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .arrow-btn:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* На больших экранах чуть больше отступы */
+@media (min-width: 768px) {
+  .doc-carousel {
+    padding: 0 10px;
+    margin: 0 -10px;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 calc(100% - 20px);
+    width: calc(100% - 20px);
+  }
+}
+
 /* ─── КОНТАКТЫ ─── */
 .contacts-grid {
   display: grid;
@@ -678,191 +792,6 @@ code {
   margin-right: 6px;
 }
 
-/* ─── ПОДВАЛ ─── */
-.footer {
-  text-align: center;
-  padding: 24px 16px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-top: 12px;
-  border-top: 0.5px solid var(--separator);
-}
-
-/* ─── АДАПТИВ ─── */
-@media (max-width: 600px) {
-  .header {
-    padding: 10px 14px;
-  }
-
-  .container {
-    padding: 12px;
-  }
-
-  .accordion-header {
-    padding: 14px 16px;
-  }
-
-  .accordion-block.open .accordion-body {
-    padding: 0 16px 18px;
-  }
-
-  .dropdown-menu {
-    right: -6px;
-    min-width: 200px;
-  }
-
-  .logo {
-    font-size: 1.05rem;
-  }
-
-  .contacts-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ─── ПЕЧАТЬ ─── */
-@media print {
-  .header,
-  .footer,
-  .accordion-toggle,
-  .lang-dropdown,
-  .theme-toggle,
-  .carousel-indicators {
-    display: none !important;
-  }
-
-  .accordion-block,
-  .accordion-body {
-    max-height: none !important;
-    opacity: 1 !important;
-    overflow: visible !important;
-    box-shadow: none !important;
-    border: 1px solid #ccc !important;
-  }
-
-  body {
-    background: #fff !important;
-    color: #000 !important;
-  }
-}
-/* ─── РЕКОМЕНДАЦИИ С ИКОНКАМИ (ИСПРАВЛЕНО) ─── */
-.recommendation-box {
-  background: rgba(252, 163, 17, 0.08);
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin-top: 16px;
-  border-left: 3px solid var(--accent);
-  font-size: 0.9rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: var(--text-primary);
-}
-
-.recommendation-box .rec-icon {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  color: var(--accent);
-  margin-top: 2px;
-}
-
-.recommendation-box .rec-content {
-  flex: 1;
-}
-
-[data-theme="dark"] .recommendation-box {
-  background: rgba(252, 163, 17, 0.12);
-}
-
-/* ─── ИНФО-ЗАМЕТКА (ИСПРАВЛЕНО) ─── */
-.info-note {
-  background: var(--hover-bg);
-  border-radius: 10px;
-  padding: 10px 12px;
-  margin-top: 16px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-style: italic;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.info-note .note-icon {
-  flex-shrink: 0;
-  width: 14px;
-  height: 14px;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-/* ─── ПРЕДУПРЕЖДЕНИЕ О ПУТЕВОМ ЛИСТЕ (ИСПРАВЛЕНО) ─── */
-.waybill-warning {
-  background: rgba(255, 59, 48, 0.1);
-  border-left: 3px solid var(--danger-text);
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin-top: 16px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--text-primary);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-.waybill-warning .warning-icon {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  color: var(--danger-text);
-  margin-top: 2px;
-}
-
-[data-theme="dark"] .waybill-warning {
-  background: rgba(255, 59, 48, 0.15);
-}
-
-/* ─── АДАПТИВ ДЛЯ МОБИЛЬНЫХ ─── */
-@media (max-width: 600px) {
-  .recommendation-box {
-    padding: 10px 12px;
-    font-size: 0.85rem;
-    gap: 8px;
-  }
-  
-  .recommendation-box .rec-icon {
-    width: 14px;
-    height: 14px;
-    margin-top: 1px;
-  }
-  
-  .info-note {
-    padding: 8px 10px;
-    font-size: 0.8rem;
-    gap: 6px;
-  }
-  
-  .info-note .note-icon {
-    width: 12px;
-    height: 12px;
-  }
-  
-  .waybill-warning {
-    padding: 10px 12px;
-    font-size: 0.85rem;
-    gap: 8px;
-  }
-  
-  .waybill-warning .warning-icon {
-    width: 14px;
-    height: 14px;
-  }
-}
 /* ─── КАРУСЕЛИ КОНТАКТОВ ─── */
 .contacts-carousel-wrapper {
   position: relative;
@@ -1025,7 +954,6 @@ code {
   opacity: 0.8;
 }
 
-/* Адаптив для каруселей контактов */
 @media (max-width: 600px) {
   .operator-card {
     flex: 0 0 260px;
@@ -1093,33 +1021,18 @@ code {
   background: rgba(252, 163, 17, 0.12);
 }
 
-/* Флаги в языковом меню */
-.lang-option .flag {
-  width: 22px;
-  height: 14px;
-  border-radius: 3px;
-  object-fit: cover;
-}
-
-/* Флаги в карточках операторов */
-.flag-badge .flag {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* ─── ИЗОБРАЖЕНИЕ В РАЗДЕЛЕ ─── */
 .section-image-wrapper {
   margin: 12px 0 16px;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: var(--shadow);
 }
 
 .section-image {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: none;
   object-fit: contain;
   display: block;
 }
@@ -1132,16 +1045,16 @@ code {
 
 /* ─── ИЗОБРАЖЕНИЯ В ШТРАФАХ ─── */
 .fine-image-wrapper {
-  margin: 12px 0;
+  margin: 16px 0;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible !important;
   box-shadow: var(--shadow);
 }
 
 .fine-image {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: none !important;
   object-fit: contain;
   display: block;
   background: var(--hover-bg);
@@ -1174,29 +1087,18 @@ code {
   background: rgba(252, 163, 17, 0.15);
 }
 
-/* ─── АДАПТИВ ─── */
-@media (max-width: 600px) {
-  .fine-image {
-    max-height: 250px;
-  }
-  
-  .age-notice {
-    font-size: 0.9rem;
-    padding: 12px 14px;
-  }
-}
-
 /* ─── СЕКЦИЯ ПЛАТНЫХ ПАРКОВОК ─── */
 .parking-info-section {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: visible !important;
 }
 
 .parking-image-wrapper {
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible !important;
   box-shadow: var(--shadow);
   background: var(--hover-bg);
 }
@@ -1204,7 +1106,7 @@ code {
 .parking-image {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: none !important;
   object-fit: contain;
   display: block;
 }
@@ -1266,95 +1168,60 @@ code {
   background: rgba(255, 59, 48, 0.15);
 }
 
-/* ─── АДАПТИВ ─── */
-@media (max-width: 600px) {
-  .parking-image {
-    max-height: 250px;
-  }
-  
-  .parking-reminder {
-    font-size: 0.9rem;
-    padding: 10px 12px;
-  }
-}
-/* ─── ПОДСКАЗКА СВАЙПА В КАРУСЕЛИ ─── */
-
-/* Частичный показ следующего слайда (все устройства) */
-.doc-carousel {
-  padding: 0 6px;
-  margin: 0 -6px;
+/* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
+.app-download-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0 20px;
+  max-width: 380px;
 }
 
-.carousel-slide {
-  flex: 0 0 calc(100% - 12px);
-  width: calc(100% - 12px);
-}
-
-/* На больших экранах чуть больше отступы */
-@media (min-width: 768px) {
-  .doc-carousel {
-    padding: 0 10px;
-    margin: 0 -10px;
-  }
-
-  .carousel-slide {
-    flex: 0 0 calc(100% - 20px);
-    width: calc(100% - 20px);
-  }
-}
-
-/* ─── ИЗОБРАЖЕНИЯ В ШТРАФАХ ─── */
-.fine-image-wrapper {
-  margin: 16px 0;
-  border-radius: 12px;
-  overflow: visible;
-  box-shadow: var(--shadow);
-}
-
-.fine-image {
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  display: block;
-  background: var(--hover-bg);
-}
-
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
-  .fine-image {
-    max-height: none;
-  }
-}
-
-/* ─── ЛОГОТИП В ШАПКЕ ─── */
-.logo {
+.download-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--separator);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.logo-image {
-  height: 85%;  /* 85% от высоты шапки */
-  width: auto;  /* Ширина подстроится автоматически */
+.download-btn:hover {
+  border-color: var(--accent);
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.store-icon {
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   display: block;
-  max-width: 200px;  /* Максимальная ширина (чтобы не был слишком широким) */
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
-  .logo-image {
-    height: 75%;  /* Чуть меньше на телефонах */
-    max-width: 150px;
-  }
-}
-
-/* Очень узкие экраны */
 @media (max-width: 400px) {
-  .logo-image {
-    height: 70%;
-    max-width: 120px;
+  .app-download-buttons {
+    gap: 8px;
+    max-width: 100%;
+  }
+  
+  .download-btn {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .store-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -1387,136 +1254,144 @@ code {
   background: rgba(255, 59, 48, 0.12);
 }
 
-/* ─── КНОПКИ СКАЧИВАНИЯ ПРИЛОЖЕНИЙ ─── */
-
-.app-download-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Две равные колонки */
-  gap: 10px;
-  margin: 16px 0 20px;
-  max-width: 380px;
+/* ─── ПОДВАЛ ─── */
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  border-top: 0.5px solid var(--separator);
 }
 
-.download-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: var(--card-bg);
-  border: 1px solid var(--separator);
-  border-radius: 12px;
-  text-decoration: none;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.download-btn:hover {
-  border-color: var(--accent);
-  background: var(--hover-bg);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Стили иконки — только размер, цвета оригинальные */
-.store-icon {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  display: block;
-}
-
-/* Адаптив для мобильных */
-@media (max-width: 400px) {
-  .app-download-buttons {
-    gap: 8px;
-    max-width: 100%;
+/* ─── АДАПТИВ ─── */
+@media (max-width: 600px) {
+  .header {
+    padding: 10px 14px;
   }
   
-  .download-btn {
-    padding: 8px 10px;
+  .container {
+    padding: 12px;
+  }
+  
+  .accordion-header {
+    padding: 14px 16px;
+  }
+  
+  .accordion-block.open .accordion-body {
+    padding: 0 16px 18px;
+  }
+  
+  .dropdown-menu {
+    right: -6px;
+    min-width: 200px;
+  }
+  
+  .logo {
+    font-size: 1.05rem;
+  }
+  
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fine-image {
+    max-height: none;
+  }
+  
+  .age-notice {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+  
+  .parking-image {
+    max-height: none;
+  }
+  
+  .parking-reminder {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  
+  .recommendation-box {
+    padding: 10px 12px;
     font-size: 0.85rem;
     gap: 8px;
   }
   
-  .store-icon {
-    width: 20px;
-    height: 20px;
+  .recommendation-box .rec-icon {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+  }
+  
+  .info-note {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  
+  .info-note .note-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .waybill-warning {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .waybill-warning .warning-icon {
+    width: 14px;
+    height: 14px;
   }
 }
 
-/* ─── СТРЕЛКИ НАВИГАЦИИ КАРУСЕЛИ (Минимализм) ─── */
-.carousel-arrows {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  margin-top: 4px;  /* ← Было 10px, стало 4px (ближе к точкам) */
-  padding: 4px 0;
-}
-
-.arrow-btn {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: transparent;
-  color: var(--text-primary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  padding: 0;
-  opacity: 0.6;
-}
-
-.arrow-btn:hover {
-  opacity: 1;
-  color: var(--accent);
-  transform: scale(1.1);
-}
-
-.arrow-btn:active {
-  transform: scale(0.95);
-}
-
-.arrow-btn:disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-}
-
-.arrow-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
-}
-
-/* Адаптив для мобильных */
-@media (max-width: 600px) {
+/* ─── ПЕЧАТЬ ─── */
+@media print {
+  .header,
+  .footer,
+  .accordion-toggle,
+  .lang-dropdown,
+  .theme-toggle,
+  .carousel-indicators,
   .carousel-arrows {
-    gap: 24px;
-    margin-top: 2px;  /* ← На телефонах ещё ближе (2px) */
+    display: none !important;
   }
   
-  .arrow-btn {
-    width: 36px;
-    height: 36px;
+  .accordion-block,
+  .accordion-body {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
   }
   
-  .arrow-btn svg {
-    width: 18px;
-    height: 18px;
+  body {
+    background: #fff !important;
+    color: #000 !important;
   }
 }
 
-/* Тёмная тема */
-[data-theme="dark"] .arrow-btn {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-[data-theme="dark"] .arrow-btn:hover {
-  color: var(--accent);
-  opacity: 1;
+/* ─── ИСПРАВЛЕНИЕ ОБРЕЗКИ ИЗОБРАЖЕНИЙ НА ПК ─── */
+@media (min-width: 601px) {
+  #fines .accordion-body {
+    overflow: visible !important;
+  }
+  
+  #fines .parking-info-section {
+    overflow: visible !important;
+  }
+  
+  #fines .parking-image-wrapper {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  #fines .parking-image {
+    max-height: none !important;
+    height: auto !important;
+  }
 }
