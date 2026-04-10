@@ -1446,3 +1446,77 @@ code {
     height: 20px;
   }
 }
+
+/* ─── СТРЕЛКИ НАВИГАЦИИ КАРУСЕЛИ (Минимализм) ─── */
+.carousel-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 10px;
+  padding: 4px 0;
+}
+
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  opacity: 0.6;
+}
+
+.arrow-btn:hover {
+  opacity: 1;
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.arrow-btn:active {
+  transform: scale(0.95);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.arrow-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .carousel-arrows {
+    gap: 24px;
+    margin-top: 8px;
+  }
+  
+  .arrow-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .arrow-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Тёмная тема */
+[data-theme="dark"] .arrow-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .arrow-btn:hover {
+  color: var(--accent);
+  opacity: 1;
+}
