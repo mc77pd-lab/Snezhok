@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="tm" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNEZHOK taksi parky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+   <div class="logo">
+    <img src="img/logo/logo2.svg" alt="SNEZHOK" class="logo-image">
+</div>
+
+    <div class="header-controls">
+      <div class="lang-dropdown">
+        <button class="lang-btn" id="lang-toggle" aria-label="Dil saýlaň">
+          <div id="current-flag-container"></div>
+          <span id="current-lang-label">Türkmençe</span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+               <div class="dropdown-menu" id="lang-menu" role="listbox">
+          <a class="lang-option" href="index.html" role="option"><img class="flag" src="img/flags/ru.svg" alt="Russiýa"><span>Rusça</span></a>
+          <a class="lang-option" href="kg.html" role="option"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"><span>Gyrgyzça</span></a>
+          <a class="lang-option" href="kz.html" role="option"><img class="flag" src="img/flags/kz.svg" alt="Gazagystan"><span>Қaзақsha</span></a>
+          <a class="lang-option" href="tj.html" role="option"><img class="flag" src="img/flags/tj.svg" alt="Täjigistan"><span>Toҷikӣ</span></a>
+          <a class="lang-option" href="tm.html" role="option"><img class="flag" src="img/flags/tm.svg" alt="Türkmenistan"><span>Türkmençe</span></a>
+          <a class="lang-option" href="uz.html" role="option"><img class="flag" src="img/flags/uz.svg" alt="Özbegistan"><span>Oʻzbekcha</span></a>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="theme-toggle" aria-label="Temany üýtgetmek">
+        <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 1. Arenda şertleri -->
+    <section class="accordion-block" id="conditions">
+      <div class="accordion-header"><h2>Arenda şertleri</h2><button class="accordion-toggle" aria-expanded="true"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Arendanyň iň gysga möhleti – <strong>14 gün</strong>.</li>
+          <li>Arendanyň birinji güni – <strong>mugt</strong> (täze sürüjiler üçin).</li>
+          <li>Ulagy tabşyrmak: duşenbe – anna.</li>
+          <li>Ulagy tabşyrmazdan <strong>3 gün öň</strong> kolonna başlygyna habar bermeli.</li>
+          <li>Arenda tölegi her gün sagat <strong>12:00-da</strong> alynýar.</li>
+          <li>Park komissiýasy – <strong>3%</strong>.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Kompaniýanyň içki saklandyryşy (KASKO)</h3>
+          <p>Bahasy: <strong>+100 ₽/gün</strong>.</p>
+          <p>Ulag uly zyýan çeken ýagdaýynda, sürüji <strong>20 000 ₽</strong>-dan köp däl töleg töleýär, galan çykdajylary kompaniýa ödeýär.</p>
+          <p class="warning-text">Bu hyzmat aşakdaky ýagdaýlarda <strong>işlemeýär</strong>:</p>
+          <ul>
+            <li>ulagy başga adama berseňiz;</li>
+            <li>serhoş ýagdaýynda ulag sürýän bolsaňyz;</li>
+            <li>ýol düzgünlerini agyr bozsaňyz;</li>
+            <li>ulagy bilkastlaýyn zeperlendirseňiz;</li>
+            <li>ýol heläkçiligi bolan ýerden gaçyp gitseniz;</li>
+            <li>ýol heläkçiligi barada resminamalar ýok bolsa;</li>
+            <li>ulagyň bozulanyny bilip sürýän bolsaňyz;</li>
+            <li>ulagy şahsy maksatlar üçin ulansaňyz.</li>
+          </ul>
+        </div>
+        <p><strong>Sürüji aşakdakylar üçin maddy jogapkärçilik çekýär:</strong> çyzylan, dyrnaklanan, egilen ýerler, hereket edýän bölegiň zyýany, şinalar, diskler, aýnalar we beýleki zeperler.</p>
+        <p>Jerimeler we ÇKAD, MSD ýollarynda geçmek tölegi sürüjiniň mobil programmasynyň hasabyndan awtomatik usulda alynýar. <strong>1 000 ₽</strong>-dan ýokary jerimeler her gün <strong>1 000 ₽</strong> möçberinde alynýar.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div class="rec-content"><strong>Gadagan:</strong> ulagy başga adama bermek we ony maksadyna laýyk gelmezlikde ulanmak.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Ulagy barlamak -->
+    <section class="accordion-block" id="car-inspect">
+      <div class="accordion-header"><h2>Ulagy kabul edende barlamak</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <h3>Daşky görnüşi:</h3>
+        <ul class="check-list"><li>kuzowdaky ýapyşdyrylan elementler;</li><li>zyýanlaryň bar-ýoklugy (çyziklar, egilen ýerler we ş.m.);</li><li>salonyň ýagdaýy;</li><li>tekerleriň ýagdaýy;</li><li>öňki aýnanyň bitewüligi.</li></ul>
+        <h3>Tehniki ýagdaýy:</h3>
+        <ul class="check-list"><li>ýagyň, tormoz we sowadyjy suwuklyklaryň derejesi;</li><li>generator kemeriniň ýagdaýy;</li><li>akkumulýatoryň ýagdaýy.</li></ul>
+        <h3>Yşyk enjamlary:</h3>
+        <ul class="check-list"><li>gabarity çyralar, faralar, öwrüliş signallary, tormoz çyralary, yzyna hereket çyralary.</li></ul>
+        <h3>Gerekli enjamlar:</h3>
+        <ul class="check-list"><li>çatydaky we gapdallardaky taksi nyşanlary;</li><li>awariýa togtadysy nyşany, öçüriji, derman gutusy;</li><li>ýedek teker, domkrat, gaýka açary.</li></ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <div class="rec-content">Ulagy kabul edeniňizde resminamalary, olaryň ýaramlylyk möhletini barlaň, hasaba alynyş belgilerini resminamalar bilen deňeşdiriň.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Resminamalar (KARUSEL) -->
+    <section class="accordion-block" id="documents">
+      <div class="accordion-header"><h2>Özüňiz bilen alyp ýörmeli resminamalar</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="doc-carousel-wrapper">
+          <div class="doc-carousel" id="doc-carousel">
+            <div class="carousel-slide"><img src="img/driver_license/driver_license.png" alt="Sürüjilik şahadatnamasy"><p class="carousel-caption">Sürüjilik şahadatnamasy <span class="text-secondary">(ýaramlylyk möhletini barlaň)</span></p></div>
+            <div class="carousel-slide"><img src="img/sts/sts_2.jpg" alt="Hasaba alyş şahadatnamasy"><p class="carousel-caption">Hasaba alyş şahadatnamasy (STS) <span class="text-secondary">(ýaramlylyk möhletini barlaň)</span></p></div>
+            <div class="carousel-slide"><img src="img/save/save.png" alt="OSAGO saklandyryş polisy"><p class="carousel-caption">OSAGO saklandyryş polisy <span class="text-secondary">(ýaramlylyk möhletini barlaň)</span></p></div>
+            <div class="carousel-slide"><img src="img/diagnostic/diag_card.png" alt="Diagnostika kartasy"><p class="carousel-caption">Diagnostika kartasy <span class="text-secondary">(ýaramlylyk möhletini barlaň)</span></p></div>
+            <div class="carousel-slide"><img src="img/road_list/road_list.png" alt="Doldurylan ýol waragasy"><p class="carousel-caption">Doldurylan ýol waragasy</p></div>
+          </div>
+          <div class="carousel-indicators" id="doc-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Ýol waragasyny almak tertibi -->
+    <section class="accordion-block" id="waybill">
+      <div class="accordion-header"><h2>Ýol waragasyny almak tertibi</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Parka gelende, mehanikden ulag resminamalaryny, daşaýjynyň kartasyny, ýol waragasyny, çatydaky nyşany alyň. Alandygyňyzy tassyklamak üçin <span class="highlight">gol goýuň</span>.</li>
+          <li>Lukmançylyk barlagyndan geçiň (umumy ýagdaý, beden temperaturasy, gan basyşy, serhoşlygy barlamak), jogapkär adamyň ýanynda <span class="highlight">wagty</span> we gol goýuň.</li>
+          <li>Mehanikden ulag açarlaryny alyp, ulagy barlaýarsyňyz. Barlag tamamlanansoň, mehanigiň ýanynda <span class="highlight">wagty</span> we gol goýuň.</li>
+          <li>Ulagy tehniki taýdan ýaramly ýagdaýda kabul edeniňiz barada <span class="highlight">gol goýuň</span>.</li>
+          <li>Taksi nyşany, ýol waragasy ýa-da daşaýjy kartasy ýitirilen ýagdaýyndaky hereketler barada habarlydygyňyzy tassyklamak üçin <span class="highlight">gol goýuň</span>.</li>
+          <li>Parkdan çykýan wagty çykan <span class="highlight">wagty</span> belläň.</li>
+          <li>Çykyş wagtyndaky ulagyň <span class="highlight">kilometražyny</span> belläň.</li>
+        </ol>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Ýol waragasyny nädogry doldurmak <strong>100 000 ₽</strong> jerime we ulagy <strong>2 aýa</strong> çenli jerime duralgasyna almak bilen jezalandyrylýar.</div>
+        </div>
+
+        <div class="info-note">
+          <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>Käbir ýagdaýlarda mehanik we lukmançylyk işgäri sürüjä özi gelip biler.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Her gün barlamak -->
+    <section class="accordion-block" id="daily-inspect">
+      <div class="accordion-header"><h2>Her gün ulagy barlamak</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Ulagy aýlanyp, zyýanlaryň ýokdugyna ynanyn.</li>
+          <li>Tekerleri barlaň.</li>
+          <li>Suwuklyklaryň derejesini, kemerdäki çyziklary, akkumulýatoryň ýagdaýyny we klemmalaryň berkligini, akýan ýerleriň ýokdugyny barlaň.</li>
+          <li>Resminamalary we olaryň ýaramlylyk möhletini barlaň.</li>
+          <li>Ulagyň arassalygyna ynanyn.</li>
+        </ul>
+        <div class="info-block">
+          <h3>Eger togtadýan ýerde zyýan tapsaňyz:</h3>
+          <ol class="step-list"><li>Kolonna başlygyna jaň ediň.</li><li>Ulagy hereket etdirmezden, ähli tarapyndan surat alyň, zyýanlary umumy we ýakyn görnüşde düşüriň.</li><li>Wakany resmileşdirmek üçin polisiýa çagyryň.</li></ol>
+        </div>
+
+        <!-- Ulag suratlary karuseli -->
+        <div class="doc-carousel-wrapper" style="margin-top: 20px;">
+          <div class="doc-carousel" id="inspection-carousel">
+            <div class="carousel-slide"><img src="img/auto/granta.png" alt="lada_granta"><p class="carousel-caption">Lada Granta</p></div>
+            <div class="carousel-slide"><img src="img/auto/h5.png" alt="Hongqi_h5"><p class="carousel-caption">Hongqi H5</p></div>
+            <div class="carousel-slide"><img src="img/auto/jac.png" alt="jac_j7"><p class="carousel-caption">Jac J7</p></div>
+            <div class="carousel-slide"><img src="img/auto/jetta.png" alt="Volkswagen_jetta"><p class="carousel-caption">Volkswagen Jetta</p></div>
+            <div class="carousel-slide"><img src="img/auto/kaiyi.png" alt="kaiyi_e5"><p class="carousel-caption">Kaiyi E5</p></div>
+            <div class="carousel-slide"><img src="img/auto/moscvich.png" alt="moscvich"><p class="carousel-caption">Moskwiç 3</p></div>
+            <div class="carousel-slide"><img src="img/auto/polo.png" alt="Volkswagen_polo"><p class="carousel-caption">Volkswagen Polo</p></div>
+            <div class="carousel-slide"><img src="img/auto/rapid.png" alt="Skoda_rapid"><p class="carousel-caption">Skoda Rapid</p></div>
+            <div class="carousel-slide"><img src="img/auto/baic.png" alt="baic_e5plus"><p class="carousel-caption">Baic E5 plus</p></div>
+          </div>
+          <div class="carousel-indicators" id="inspection-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+            <button class="indicator" data-index="8"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Iş boýunça maslahatlar -->
+    <section class="accordion-block" id="work-tips">
+      <div class="accordion-header"><h2>Ýolda işlemek boýunça maslahatlar</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p>Işlemek üçin iň peýdaly wagt: <strong>05:00–11:00</strong> we <strong>15:00–20:00</strong>. Bu sagatlarda talap iň ýokary.</p>
+        <p>Siziň rahatlygyňyz we howpsuzlygyňyz iň möhüm. Ýadawlyk ünsüňi peseldýär, şonuň üçin dynç alyň we ýeterlik ukaň.</p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Ulagy agşam, öňünden ýangyç guýup, ýuwup goýmagy maslahat berýäris. Bu irdenki wagty tygşytlar we ýola çykmazdan öň howsalasyzlyga kömek eder.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Tehniki barlag we bejeriş -->
+    <section class="accordion-block" id="tech-service">
+      <div class="accordion-header"><h2>Tehniki barlag we bejeriş</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Tehniki barlag her <strong>10 000 km</strong> soň geçirilýär.</li>
+          <li>Bejeriş we hyzmat – <strong>taksi parkynyň awtoservisinde diňe</strong>.</li>
+          <li>Tehniki barlaga we bejerişe ýazylmak – barmazdan <strong>3 gün öň</strong>.</li>
+          <li>Özbaşdak gatnaşmak (bejeriş, zapçast çalyşmak, ýag goşmak) – <strong>kolonna başlygy bilen ylalaşandan soň diňe</strong>.</li>
+        </ul>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <div class="rec-content">Ulagy kabul edeniňizde kolonna başlygyndan tehniki barlaga näçe kilometr soň gelmeliňizi sorap bilersiňiz.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GIBDD we MADI bilen gatnaşyk -->
+    <section class="accordion-block" id="police-rules">
+      <div class="accordion-header"><h2>GIBDD we MADI bilen gatnaşyk düzgünleri</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ul class="check-list">
+          <li>Asuda, howsalasyz, edepli gatnaşyň.</li>
+          <li>Çaknyşyk döretmäň (gaharlanmak, ses götermek).</li>
+          <li>«Esasy näme?», «Toztatmak sebäbi?», «Siziň hukugyňyz ýok» ýaly sözleri ulanmaň.</li>
+          <li>Eger protokol doldurylýan bolsa, sebäbini düşündirip bermegini edepli sorap bilersiňiz.</li>
+          <li>Eger düşünmeýän bolsaňyz – terjimeçi soraň. <strong>Mazmuny düşnüksiz resminamalara gol goýmaň.</strong></li>
+          <li>Protokol doldurylan dessine kolonna başlygyna habar beriň.</li>
+          <li>Işgärleriň hereketleriniň kanunylygyna ynanmasaňyz – kolonna başlygyna jaň ediň!</li>
+        </ul>
+        <div class="info-block">
+          <h3>MADI barlagy</h3>
+          <p>MADI işgärleri taksi nyşanlarynyň, daşaýjy kartasynyň, ýol waragasynyň bardygyny we daşamak howpsuzlygyny barlap biler.</p>
+          <p><strong>Möhüm:</strong> MADI işgäri resminamalary barlamak üçin ulagy togtatmaga hukugy ýok. Muny diňe polisiýa işgärleri edýär. Ýöne eger MADI işgäri özi gelip resminama sorasa – beriň, dawalaşmaň.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Moskwa welaýatyndan çykmak -->
+    <section class="accordion-block" id="outside-mo">
+      <div class="accordion-header"><h2>Moskwa welaýatyndan çykmak</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <!-- Surat başlykdan soň -->
+        <div class="section-image-wrapper">
+          <img src="img/get_out/out.png" alt="Moskwa welaýatyndan çykmak" class="section-image">
+        </div>
+
+        <div class="waybill-warning">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Moskwa welaýatyndan çykmazdan öň kolonna başlygyna jaň etmek <strong>borç</strong>.</div>
+        </div>
+        <p>Eger Moskwa welaýatyndan daşarda ulag bozulsa ýa-da ýol heläkçiligi bolsa, ewakuator tölegini <strong>sürüji</strong> töleýär.</p>
+      </div>
+    </section>
+
+    <!-- 10. Ýol heläkçiligi -->
+    <section class="accordion-block" id="accident">
+      <div class="accordion-header"><h2>Ýol heläkçiligi bolanda näme etmeli</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Toctaň, awariýa signalyny ýakyň, nyşany goýuň. Şäherden daşarda ýagty şöhlelendiriji žilet geýiň.</li>
+          <li>Eger ýaralananlar bolsa – tiz kömek çagyryň (<strong>103</strong> ýa-da <strong>112</strong>). Eger bilmeýän bolsaňyz, birinji kömegi görkezmäň.</li>
+          <li>Ýol heläkçiligi bolan ýeri, ähli ulaglaryň zyýanlaryny, belgilerini surata düşüriň we kolonna başlygyna iberiň.</li>
+          <li>GIBDD işgärini garaň.</li>
+        </ol>
+        <div class="info-block">
+          <h3>Eger GIBDD işgäri ýoly boşatmagy sorasa:</h3>
+          <ul><li>Düzgünleri saklap toctaň. <img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> nyşanynyň aşagynda ulag goýmaň.</li><li>Tölegli togtadýan ýer bolsa – tölegini töläň.</li><li>Beýleki ýol düzgünlerini bozmaň.</li></ul>
+        </div>
+        <h3>Ýewroprotokol doldurmak şertleri:</h3>
+        <ul><li>Kolonna başlygy ýewroprotokola razy bolan;</li><li>Ýol heläkçiliginde diňe 2 ulag, ýaralananlar ýok;</li><li>Iki sürüjiniň hem OSAGO-sy ýaramly;</li><li>Ikisi hem ýewroprotokola razy, infrastruktura zyýan çekmändir, ulaglaryň ornuny üýtgemedik.</li></ul>
+        <p><em>Ýewroprotokol – soňky çäre. GIBDD arkaly resmileşdirmäge synanyşyň.</em></p>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Ýewroprotokol doldurylandan soň, ikinji gatnaşyjy birinji gidýänçä garaň.</div>
+        </div>
+        <p class="danger">Siziň günäňiz bilen bolan ýol heläkçiliginde ewakuator tölegini siz töleýärsiňiz.</p>
+      </div>
+    </section>
+
+    <!-- 11. Ulag bozulanda -->
+    <section class="accordion-block" id="breakdown">
+      <div class="accordion-header"><h2>Ýolda ulag bozulanda</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <ol class="step-list">
+          <li>Ýol düzgünlerini we howpsuzlyk tehnikasyny saklap toctaň.</li>
+          <li>Awariýa togtadysy nyşany goýuň.</li>
+          <li>Ýolagçylary düşüriň.</li>
+          <li>Mehanik ýa-da ewakuator çagyrmak üçin kolonna başlygyna jaň ediň.</li>
+        </ol>
+        <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="rec-content">Eger tölegli togtadýan ýerde togtamaga mejbur bolsaňyz – tölegini töläň. Soň kompensasiýa alarsyňyz.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Jerimeler -->
+    <section class="accordion-block" id="fines">
+      <div class="accordion-header"><h2>Jerimeler</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <p class="warning-text">Summalar ýeňilliksiz doly görkezildi. Köp jerimeleri 25–50% ýeňillik bilen töläp bolýar.</p>
+        
+        <div class="fine-item">
+          <h3>Daşaýjy kartasy ýok</h3>
+          <p>Jerime: <strong class="price">30 000 ₽</strong>. Öň paneliň sag tarapynda bolmaly.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_card/taxi_card.png" alt="Daşaýjy kartasy" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Taksi çyrasy ýa-da «şaşka» ýok</h3>
+          <p>Jerime: <strong class="price">50 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_hat/taxi_hat.png" alt="Taksi çyrasy" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Işden soň çyrany aýyryp, sürüji tarapdaky poluň üstüne goýuň. Şeýlelik bilen çyrany ogurlap gitmezler, ýola çykanda ornaşdyrmagy unutmarsyňyz. Çyrany bagajyga salmaň.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Çemene we trotuara togtamak</h3>
+          <p>Jerime: <strong class="price">300 000 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/grass/grass.png" alt="Çemene togtamak" class="fine-image">
+          </div>
+          <div class="recommendation-box">
+            <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div class="rec-content">Ulagy dört tekeri hem asfaltda duran ýaly edip togtadyň. Ýöriýän adamlar üçin trotuara we bordýura ulag goýmaň.</div>
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Çagalary daşamak düzgünlerini bozmak</h3>
+          <p>Jerime: <strong class="price">200 000 ₽</strong>. Çaga oturagy ýok/ýalňyş/ýalňyş ornaşdyrylan ýa-da çaga remni dakylmadyk.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/child/child_chair.png" alt="Çaga oturagy" class="fine-image">
+          </div>
+          <!-- Çaga suratlary karuseli -->
+          <div class="doc-carousel-wrapper" style="margin-top: 16px;">
+            <div class="doc-carousel" id="children-carousel">
+              <div class="carousel-slide"><img src="img/child/boy.png" alt="Çaga oturagy mysal 1"><p class="carousel-caption">Boý 150 sm-den ýokary</p></div>
+              <div class="carousel-slide"><img src="img/child/good.png" alt="Çaga oturagy mysal 2"><p class="carousel-caption">Dogry. Remen egininden geçýär.</p></div>
+              <div class="carousel-slide"><img src="img/child/not_good.png" alt="Çaga oturagy mysal 3"><p class="carousel-caption">Ýalňyş. Remen boýnundan geçýär.</p></div>
+            </div>
+            <div class="carousel-indicators" id="children-indicators">
+              <button class="indicator active" data-index="0"></button>
+              <button class="indicator" data-index="1"></button>
+              <button class="indicator" data-index="2"></button>
+            </div>
+            <div class="carousel-arrows">
+              <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="recommendation-box">
+          <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div class="rec-content">Eger müşderide çaga oturagy ýok bolsa – zakazy ýok etmegi soraň. Eger müşderi ýok etmekden ýüz öwürse, ornunda galyn. Goldaw hyzmatyna jaň edip, ýagdaýy düşündiriň we zakazyň awtomatik usulda ýok edilmegini garaň.</div>
+          </div>
+
+          <div class="age-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div><strong>12 ýaşdan kiçi, boýy 150 sm-den ýokary we agramy 36 kg-dan agyr çagalar yzky orunda adaty remen bilen oturyp biler.</strong></div>
+          </div>
+        </div>
+
+       <div class="fine-item">
+  <h3>Serhoş ýagdaýy ýa-da lukmançylyk barlagyndan ýüz öwürmek</h3>
+  <p>Jerime: <strong class="price">145 000 ₽</strong> + 1,5–2 ýyla hukukdan mahrum etmek. <strong>Her wagt lukmançylyk barlagyndan geçmäge razy boluň!</strong></p>
+
+  <div class="fine-image-wrapper" style="margin-top: 16px;">
+    <img src="img/alko/alko.png" alt="Lukmançylyk barlagy" class="fine-image">
+  </div>
+    <p>Käbir dermanlar reaksiýa täsir edýär. Kabul etmezden öň instrukisiýasyny barlaň.</p>
+  <div class="meds-block">
+    <p class="danger">⛔ Gadagan!</p>
+    <p>Andipal, Bellataminal, Walokordin, Waloserdin, Kaffetin, Korwaldin, Korwalol, Omnopon, Pentabufen, Pentalgin-N, Pentanow, Pliwalgin, Sedal, Sedalgin Neo, Solpadein, Tedein, Teofedrin, Terpinkod, Toff Plus</p>
+    <p class="warning-text">⚠️ Ünsli boluň!</p>
+    <p>Alprazolam, Antigrippin, Ataraks, Gabapentin, Diazepam, Dimedrol, Lawokodin, Loperamid, Siropor (spirtli), Suprastin, Tawegil, Telfast, Fenazepam, Fenibut, Setrin we ş.m.</p>
+  </div>
+</div>
+
+       <div class="fine-item">
+  <h3>Gadagan signalda geçmek / stop-çyzygy kesip geçmek</h3>
+  <p>Jerime: <strong class="price">7 500 ₽</strong>.</p>
+  
+  <p><strong>Sary signal hereketi gadagan edýär.</strong> Eger howpsuz togtamak mümkin bolsa, çyzyga çenli toctaň.</p>
+  
+  <div class="recommendation-box">
+    <svg class="rec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="rec-content">
+      <p><strong>Näme bozmak hasaplanýar:</strong></p>
+      <ul class="check-list" style="margin: 8px 0 0 16px; padding-left: 8px;">
+        <li>Gyzyl ýa-da sary signalda svetofordan geçmek</li>
+        <li>Stop-çyzygy ulagyň öň bölegi bilen kesip geçmek</li>
+        <li>Gadagan edilen düzgünleşdirijiniň nyşanynda stop-çyzykdan çykmak</li>
+      </ul>
+    </div>
+  </div>
+  
+  <p style="margin-top: 12px;"><strong>Maslahat:</strong> Kesişmä ýakynlaşanyňyzda, tizligiňizi öňünden peseldiň. Eger sary ýanyp başlasa – çaltlaşdyrmaň, toctaň.</p>
+</div>
+
+        <div class="fine-item">
+          <h3>Awtobus zolagynda «kirpiç» nyşanyna garşy hereket</h3>
+          <p>Jerime: <strong class="price">4 500 ₽</strong>.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/brick/brick.png" alt="Kirpiç" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3><img src="img/taxi_parking/3_27.png" alt="3.27" class="traffic-sign"> nyşanynyň aşagynda togtamak</h3>
+          <p>Jerime: <strong class="price">4 500 ₽</strong>. <img src="img/taxi_parking/5_18.jpeg" alt="5.18" class="traffic-sign"> ýa-da <img src="img/taxi_parking/8_4_14.png" alt="8.4.14" class="traffic-sign"> bilen birleşende taksi ulaglaryna togtamak rugsat berilýär.</p>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park.png" alt="Taksi togtadýan ýer" class="fine-image">
+          </div>
+          <div class="fine-image-wrapper">
+            <img src="img/taxi_parking/taxi_park_2.png" alt="taksi togtadýan ýer 2" class="fine-image">
+          </div>
+        </div>
+
+        <div class="fine-item">
+          <h3>Tizlikden aşmak</h3>
+          <ul>
+            <li>+20–40 km/sagat: <strong class="price">750 ₽</strong></li>
+            <li>+40–60 km/sagat: <strong class="price">1 500–2 250 ₽</strong></li>
+            <li>+60–80 km/sagat: <strong class="price">3 000–3 750 ₽</strong> / 4–6 aýa hukukdan mahrum etmek</li>
+            <li>+80 km/sagat we ondan ýokary: <strong class="price">7 500 ₽</strong> / 6 aýa hukukdan mahrum etmek</li>
+          </ul>
+          <p>Çäklendirmeler: ýaşaýan ýerler – 20, şäher – 60, TTK/magistrallar – 80, MKAD – 100.</p>
+        </div>
+
+        <div class="fine-item">
+          <h3>Ýol gyrasynda hereket etmek</h3>
+          <p>Jerime: <strong class="price">2 250 ₽</strong>. Ýol gyrasynda hereket etmek awariýa ýagdaýy döretmäge deňdir. Ýol heläkçiligi bolan ýagdaýda günäkär siz bolarsyňyz.</p>
+        </div>
+
+       <div class="fine-item">
+  <h3>Remen dakylmadyk</h3>
+  <p>Jerime: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Ýolagçylar üçin jogapkärçilik sürüjä ýüklenýär.</p>
+</div>
+
+<div class="fine-item">
+  <h3>Sürýän wagty telefon ulanmak</h3>
+  <p>Jerime: <strong class="price">1 500 ₽</strong>.</p>
+  <p>Telefon tutujy we garnitura (gulakçyn) ulanyň</p>
+</div>
+
+        <!-- Täze bölüm tölegli togtadýan ýerler barada -->
+        <div class="fine-item" style="margin-top: 20px;">
+          <h3>Tölenmedik togtadýan ýer</h3>
+          <p>Jerime: <strong class="price">50 000 ₽</strong></p>
+          
+          <div class="parking-info-section">
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/toll_park.png" alt="Tölegli togtadýan ýer nyşanlary" class="parking-image">
+              <p class="parking-caption">Tölegli togtadýan ýer nyşanlary</p>
+            </div>
+
+            <div class="parking-text">
+              <p>Ýadyňyzda bolsun: tölegli togtadýan ýer nyşany her wagt gurnalmaýar. Käwagt diňe gök разметka bolýar. Ýalňyşlyk etmezlik üçin, togtamazdan öň Ýandeks Navigator, Ýandeks Pro ýa-da «Russiýa togtadýan ýerleri» programmasy açyň – ol ýerde orun tölegli ýa-da ýokdugy takyk görkezilýär.</p>
+            </div>
+
+            <div class="parking-image-wrapper">
+              <img src="img/toll_park/blue.jpeg" alt="Tölegli togtadýan ýer разметkasy" class="parking-image">
+              <p class="parking-caption">Tölegli togtadýan ýer разметkasy</p>
+            </div>
+
+            <div class="parking-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><strong>Mugt togtamak wagty – ilkinji 5 minut!</strong></div>
+            </div>
+
+            <div class="parking-reminder danger-reminder">
+              <svg class="reminder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div><strong>TTK içinde mugt togtadýan ýerler ýok.</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 13. Programmalary sazlamak -->
+    <section class="accordion-block" id="apps">
+      <div class="accordion-header"><h2>Togtadýan ýer tölegini tölemek üçin programmalary sazlamak</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        
+        <!-- Ýandeks PRO -->
+        <h3>Ýandeks PRO</h3>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="yandex-pro-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/1.png" alt="Gatlar nyşany basyň"><p class="carousel-caption">«Gatlar» nyşany basyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/2.png" alt="Togtadýan ýer rejimini ýakyň"><p class="carousel-caption">Togtadýan ýerleri görkezmek rejimini ýakyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/3.png" alt="Kartada tölegli togtadýan ýerler peýda bolýar"><p class="carousel-caption">Kartada tölegli togtadýan ýer zonalary we togtamaga gadagan ýerler peýda bolýar</p></div>
+          </div>
+          <div class="carousel-indicators" id="yandex-pro-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Parkowki Rossii programmasi - Hasaba alyş -->
+        <h3 style="margin-top: 24px;">«Russiýa togtadýan ýerleri» programmasi</h3>
+
+        <div class="app-download-buttons">
+          <a href="https://apps.apple.com/bm/app/парковки-россии/id1434426876" target="_blank" class="download-btn">
+            <img src="img/logo/appstore.svg" alt="App Store" class="store-icon">
+            <span>App Store</span>
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/playmarket.svg" alt="Google Play" class="store-icon">
+            <span>Google Play</span>
+          </a>
+
+          <a href="https://appgallery.huawei.com/#/app/C101992459?appId=C101992459&source=appshare&subsource=C101992459" target="_blank" class="download-btn">
+            <img src="img/logo/appgallery.svg" alt="AppGallery" class="store-icon">
+            <span>AppGallery</span>
+          </a>
+
+          <a href="https://apps.rustore.ru/app/ru.mosparking.appnew" target="_blank" class="download-btn">
+            <img src="img/logo/rustore.svg" alt="RuStore" class="store-icon">
+            <span>RuStore</span>
+          </a>
+        </div>
+
+        <p style="margin-top: 16px;"><strong>Sazlamak:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-reg-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/4.png" alt="Balansy doldurmak düwmesini basyň"><p class="carousel-caption">Balansy doldurmak düwmesini basyň (başynda 0 ₽ görünýär)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/5.png" alt="Doldurmak summasyny saýlaň"><p class="carousel-caption">Doldurmak summasyny saýlap, doldurmak düwmesini basyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/6.png" alt="Tölemek usulyny saýlaň"><p class="carousel-caption">Tölemek usulyny saýlaň (SBP, Bank kartasy ýa-da telefon belgisinden alynmak)</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/7.png" alt="Ulag goşmak düwmesini basyň"><p class="carousel-caption">«Ulag goşmak» düwmesini basyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/8.png" alt="Ulag belgisini giriziň"><p class="carousel-caption">Ulag belgisini giriziň. Rus harplaryny ulanyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/9.png" alt="Taýýar düwmesini basyň"><p class="carousel-caption">«Taýýar» düwmesini basyň</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-reg-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Nädip tölemeli -->
+        <p style="margin-top: 16px;"><strong>Nädip tölemeli:</strong></p>
+        <div class="doc-carousel-wrapper" style="margin-top: 12px;">
+          <div class="doc-carousel" id="parking-pay-carousel">
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/10.png" alt="Ýandeks PRO-da togtadýan ýeri saýlaň"><p class="carousel-caption">«Ýandeks PRO» programmasynda gerekli togtadýan ýeri saýlaň. Aşakda togtadýan zolagyň belgisi görünýär</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/11.png" alt="Parkowki Rossii programmasyna giriň"><p class="carousel-caption">«Russiýa togtadýan ýerleri» programmasyna girip, ýokarda ýa-da aşakda gözlegi basyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/12.png" alt="Togtadýan zolak belgisini giriziň"><p class="carousel-caption">Gözlege «Ýandeks PRO» programmasynda görkezilen togtadýan zolak belgisini ýazyň</p></div>
+            <div class="carousel-slide"><img src="img/toll_park_instruction/png/13.png" alt="Toztatmak düwmesini basyň"><p class="carousel-caption">«Toztatmak» düwmesini basyň</p></div>
+          </div>
+          <div class="carousel-indicators" id="parking-pay-indicators">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+          </div>
+        </div>
+
+        <p style="margin-top: 12px;"><em>Adaty togtamak wagty 1 sagat saýlanýar. Wagty uly ýa-da kiçi etmäge bolýar.</em></p>
+        <p><em>Togtajak wagty gutarmazdan 15 minut öň programma wagty uzaltmagy teklip edýär.</em></p>
+        <p><em>Günüň ahyryna çenli başlamak wagtyny, ulag belgisini we togtadýan zolagy üýtgetmäge bolýar. Üýtgeşmeleri diňe sazlamalarda girizmäge bolýar, eger togtadýan ýer öňünden tölenen bolsa.</em></p>
+
+        <!-- SMS arkaly tölemek -->
+        <div class="info-block" style="margin-top: 20px;">
+          <h3>7757 belgisine SMS-habar</h3>
+          <ol class="step-list" style="margin-top: 10px;">
+            <li>Tölemek üçin <strong>7757</strong> belgisine aşakdaky tekst bilen SMS iberiň: <code>togtadýan zolak belgisi*ulag belgisi*sagat sany 1-den 24-e çenli</code>
+              <div class="example-box">Mysal: <code>1004*А123АА199*3</code></div>
+            </li>
+            <li>Togtajak wagty uzaltmak üçin – <code>X[sagat sany]</code> teksti bilen
+              <div class="example-box">Mysal: <code>X2</code></div>
+            </li>
+            <li>Togtajak wagty möhletinden öň togtatmak üçin – <code>S</code> ýa-da <code>С</code> teksti bilen
+              <div class="example-box">Mysal: <code>S</code></div>
+            </li>
+          </ol>
+          <div class="refund-notice">
+            <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div>Ulanylmadyk togtamak wagty üçin pul togtadýan hasabyňyza gaýtarylýar. <strong>Hyzmat ýerine ýetirileni barada SMS-otçýoty hökman garaň!</strong></div>
+          </div>
+        </div>
+
+        <!-- Möhüm -->
+        <div class="info-block" style="margin-top: 16px;">
+          <h3>Möhüm</h3>
+          <p><strong>Mugt togtamak wagty – ilkinji 5 minut!</strong></p>
+          <p>Tölegli togtadýan ýer nyşany bolmazlygy mümkin, diňe разметka bolup biler. Statusy Ýandeks.Navigator, Ýandeks.PRO ýa-da «Russiýa togtadýan ýerleri» programmasyndan barlaň.</p>
+          <p class="danger"><strong>TTK içinde mugt togtadýan ýerler ýok.</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Kanunsyz teklipler barada duýduryş -->
+    <section class="accordion-block" id="illegal-warning">
+      <div class="accordion-header"><h2>Kanuny işleň</h2><button class="accordion-toggle" aria-expanded="false"><span class="icon-minus">−</span><span class="icon-plus">+</span></button></div>
+      <div class="accordion-body">
+        <div class="warning-box">
+          <p><strong>«Ýetirmek» rejiminde ýolagçy daşamaga gadagan.</strong></p>
+          <p><strong>«Taksi» rejiminde zat daşamaga gadagan.</strong></p>
+          <p>«Goşmaça işlemek» ýa-da «paket ýetirmek» tekliplerinden saklanyn. Bu köplenç kanunsyz shemalary ýaşyrýar. Polisiýa we howpsuzlyk hyzmatlary şübheli hereketleri gözegçilik edýär.</p>
+          <p class="danger"><strong>Ýüz öwüriň, dispetçere habar beriň. Kanuny işleň!</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Aragatnaşyklar (ÝYGYLMAYAR) -->
+    <section class="accordion-block static-block" id="contacts">
+      <div class="accordion-header static-header"><h2>Aragatnaşyklar</h2></div>
+      <div class="accordion-body">
+        
+        <!-- Karusel 1: Nahabino -->
+        <div class="contacts-carousel-wrapper">
+          <h3 class="carousel-location-title">📍 Moskwa welaýaty, Nahabino ş., Krasnoarmeýskaýa köç., 61 B</h3>
+          <a href="https://yandex.ru/maps/?text=Московская+область+Нахабино+Красноармейская+61Б" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Nawatorda açmak</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-1">
+            
+            <!-- Kairat - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Kairat</div>
+              <div class="operator-actions">
+                <a href="tel:+79153214530" class="action-btn phone" aria-label="Jaň etmek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79153214530" target="_blank" class="action-btn whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79153214530" target="_blank" class="action-btn telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Rinat - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Rinat</div>
+              <div class="operator-actions">
+                <a href="tel:+79261868292" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79261868292" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79261868292" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Altynbek - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Altynbek</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775461" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775461" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775461" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">dek–anna: 9:00–20:00 <span class="hours-note">(şenbe – dynç)</span></div>
+            </div>
+
+            <!-- Gafar - Türkmenistan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tm.svg" alt="Türkmenistan"></div>
+              <div class="operator-name">Gafar</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676492" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676492" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676492" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Parviz - Tajikistan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/tj.svg" alt="Täjigistan"></div>
+              <div class="operator-name">Parviz</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609187" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609187" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609187" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(şenbe – dynç)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-1">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Karusel 2: Moskwa -->
+        <div class="contacts-carousel-wrapper" style="margin-top: 32px;">
+          <h3 class="carousel-location-title">📍 Moskwa ş., Wolokolamsk şosse, 142-öý, 1-bina</h3>
+          <a href="https://yandex.ru/maps/?text=Москва+Волоколамское+шоссе+142+стр1" target="_blank" class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Nawatorda açmak</span>
+          </a>
+          
+          <div class="contacts-carousel" id="contacts-carousel-2">
+            
+            <!-- Adilet 1 - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Adilet K.</div>
+              <div class="operator-actions">
+                <a href="tel:+79995773095" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995773095" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995773095" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Argen - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Argen</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775453" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775453" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775453" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(şenbe – dynç)</span></div>
+            </div>
+
+            <!-- Adilet 2 - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Adilet Z.</div>
+              <div class="operator-actions">
+                <a href="tel:+79997676678" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79997676678" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79997676678" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">dek–anna: 9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Muratbek - Gyrgyzstan -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/kg.svg" alt="Gyrgyzstan"></div>
+              <div class="operator-name">Muratbek</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775897" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775897" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775897" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(şenbe – dynç)</span></div>
+            </div>
+
+            <!-- Yuriy - Russiýa -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Russiýa"></div>
+              <div class="operator-name">Yuriy</div>
+              <div class="operator-actions">
+                <a href="tel:+79995775905" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79995775905" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79995775905" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(anna – dynç)</span></div>
+            </div>
+
+            <!-- Aleksandr 1 - Russiýa -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Russiýa"></div>
+              <div class="operator-name">Aleksandr</div>
+              <div class="operator-specialty">taksi</div>
+              <div class="operator-actions">
+                <a href="tel:+79996609167" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79996609167" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79996609167" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+            <!-- Gans - Russiýa -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Russiýa"></div>
+              <div class="operator-name">Gans</div>
+              <div class="operator-actions">
+                <a href="tel:+79251725604" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79251725604" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79251725604" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(şenbe – dynç)</span></div>
+            </div>
+
+            <!-- Aleksandr 2 - Russiýa -->
+            <div class="operator-card">
+              <div class="flag-badge"><img class="flag" src="img/flags/ru.svg" alt="Russiýa"></div>
+              <div class="operator-name">Aleksandr</div>
+              <div class="operator-specialty">ýetirmek/biznes</div>
+              <div class="operator-actions">
+                <a href="tel:+79250088543" class="action-btn phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></a>
+                <a href="https://wa.me/79250088543" target="_blank" class="action-btn whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg></a>
+                <a href="tg://resolve?phone=79250088543" target="_blank" class="action-btn telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              </div>
+              <div class="operator-hours">9:00–20:00 <span class="hours-note">(ýekşenbe – dynç)</span></div>
+            </div>
+
+          </div>
+          <div class="carousel-indicators" id="contacts-indicators-2">
+            <button class="indicator active" data-index="0"></button>
+            <button class="indicator" data-index="1"></button>
+            <button class="indicator" data-index="2"></button>
+            <button class="indicator" data-index="3"></button>
+            <button class="indicator" data-index="4"></button>
+            <button class="indicator" data-index="5"></button>
+            <button class="indicator" data-index="6"></button>
+            <button class="indicator" data-index="7"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn arrow-left" aria-label="Öňki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn arrow-right" aria-label="Indiki slaid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SNEZHOK taksi parky. Sürüjiler üçin aktual görkezmeler.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
