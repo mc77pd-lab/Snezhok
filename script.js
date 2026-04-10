@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
       saveStates();
     }
 
-    // Клик по всему заголовку
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       if (header) {
@@ -140,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function initCarousel(carouselId, indicatorsId) {
     const carousel = document.getElementById(carouselId);
     const indicators = document.querySelectorAll(`${indicatorsId} .indicator`);
+    
+    // Поиск стрелок навигации
+    const arrowsWrapper = carousel.closest('.doc-carousel-wrapper, .contacts-carousel-wrapper');
+    const leftArrow = arrowsWrapper?.querySelector('.arrow-left');
+    const rightArrow = arrowsWrapper?.querySelector('.arrow-right');
 
     if (carousel && indicators.length > 0) {
       let currentIndex = 0;
@@ -153,6 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newIndex >= 0 && newIndex < slideCount && newIndex !== currentIndex) {
           currentIndex = newIndex;
           indicators.forEach((ind, i) => ind.classList.toggle('active', i === currentIndex));
+          
+          // Обновляем состояние стрелок
+          if (leftArrow) leftArrow.disabled = currentIndex === 0;
+          if (rightArrow) rightArrow.disabled = currentIndex === slideCount - 1;
         }
       };
 
@@ -167,12 +175,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
+      // Обработчики кликов для стрелок
+      if (leftArrow && rightArrow) {
+        leftArrow.addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            const targetScroll = currentIndex * carousel.offsetWidth;
+            carousel.scrollTo({ left: targetScroll, behavior: 'smooth' });
+          }
+        });
+
+        rightArrow.addEventListener('click', () => {
+          if (currentIndex < slideCount - 1) {
+            currentIndex++;
+            const targetScroll = currentIndex * carousel.offsetWidth;
+            carousel.scrollTo({ left: targetScroll, behavior: 'smooth' });
+          }
+        });
+      }
+
       const ro = new ResizeObserver(() => {
         if (carousel.offsetParent) syncIndicators();
       });
       ro.observe(carousel);
 
-      setTimeout(syncIndicators, 150);
+      // Инициализация состояния стрелок
+      setTimeout(() => {
+        syncIndicators();
+        if (leftArrow) leftArrow.disabled = currentIndex === 0;
+        if (rightArrow) rightArrow.disabled = currentIndex === slideCount - 1;
+      }, 150);
     }
   }
 
@@ -185,5 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel('parking-reg-carousel', '#parking-reg-indicators');
   initCarousel('parking-pay-carousel', '#parking-pay-indicators');
   initCarousel('children-carousel', '#children-indicators');
-
 });
