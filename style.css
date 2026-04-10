@@ -1395,3 +1395,26 @@ code {
     height: auto !important;
   }
 }
+
+/* ─── ПОДПИСЬ СПЕЦИАЛИЗАЦИИ ОПЕРАТОРА ─── */
+.operator-specialty {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  background: var(--hover-bg);
+  border-radius: 12px;
+  display: inline-block;
+}
+
+[data-theme="dark"] .operator-specialty {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+  .operator-specialty {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+}
