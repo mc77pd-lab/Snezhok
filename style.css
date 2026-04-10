@@ -326,7 +326,6 @@ a:active {
 .accordion-body {
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
   padding: 0 18px;
   transition: max-height 0.45s var(--spring), opacity 0.3s ease, padding 0.4s var(--spring);
 }
@@ -1188,23 +1187,21 @@ code {
 
 /* ─── СЕКЦИЯ ПЛАТНЫХ ПАРКОВОК ─── */
 .parking-info-section {
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  overflow: visible !important;  /* ← Разрешаем полный показ секции */
 }
 
 .parking-image-wrapper {
   border-radius: 12px;
-  overflow: visible;
+  overflow: visible !important;  /* ← Разрешаем полный показ */
   box-shadow: var(--shadow);
   background: var(--hover-bg);
+  margin: 12px 0;
 }
 
 .parking-image {
   width: 100%;
   height: auto;
-  max-height: none;
+  max-height: none !important;  /* ← Убираем ограничение */
   object-fit: contain;
   display: block;
 }
