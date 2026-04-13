@@ -76,57 +76,31 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightCurrentLang();
 
   // ═══════════════════════════════════════════════════════════
-  // 3. АККОРДЕОН (КЛИК ПО ВСЕМУ ЗАГОЛОВКУ)
+  // 3. АККОРДЕОН (ВСЕ ЗАКРЫТЫ ПО УМОЛЧАНИЮ)
   // ═══════════════════════════════════════════════════════════
   const accordions = document.querySelectorAll('.accordion-block:not(.static-block)');
-  const STORAGE_KEY = 'snezok_accordion_states';
 
-  function toggleBlock(block, isOpen, save = true) {
+  function toggleBlock(block, isOpen) {
     const btn = block.querySelector('.accordion-toggle');
     block.classList.toggle('open', isOpen);
     if (btn) {
       btn.setAttribute('data-open', isOpen);
       btn.setAttribute('aria-expanded', isOpen);
     }
-    if (save) saveStates();
-  }
-
-  function saveStates() {
-    const states = {};
-    accordions.forEach(acc => {
-      states[acc.id] = acc.classList.contains('open');
-    });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(states));
   }
 
   function initAccordions() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    let hasValidSaved = false;
+    // Все аккордеоны закрыты по умолчанию
+    accordions.forEach(acc => toggleBlock(acc, false));
 
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (accordions.every(acc => parsed.hasOwnProperty(acc.id))) {
-          hasValidSaved = true;
-          accordions.forEach(acc => toggleBlock(acc, parsed[acc.id], false));
-        }
-      } catch (e) {
-        console.warn('Ошибка чтения состояний аккордеона:', e);
-      }
-    }
-
-    if (!hasValidSaved) {
-      accordions.forEach((acc, index) => toggleBlock(acc, index === 0, false));
-      saveStates();
-    }
-
+    // Клик по заголовку для открытия/закрытия
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       if (header) {
         header.style.cursor = 'pointer';
         header.addEventListener('click', (e) => {
           e.stopPropagation();
-          toggleBlock(acc, !acc.classList.contains('open'), true);
+          toggleBlock(acc, !acc.classList.contains('open'));
         });
       }
     });
