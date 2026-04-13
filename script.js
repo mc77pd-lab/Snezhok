@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightCurrentLang();
 
   // ═══════════════════════════════════════════════════════════
-  // 3. АККОРДЕОН (КЛИК ПО ВСЕМУ ЗАГОЛОВКУ)
+  // 3. АККОРДЕОН (ВСЕ ОТКРЫТЫ + АВТО-СВОРАЧИВАНИЕ ПРИ СКРОЛЛЕ)
   // ═══════════════════════════════════════════════════════════
   const accordions = document.querySelectorAll('.accordion-block:not(.static-block)');
   const STORAGE_KEY = 'snezok_accordion_states';
 
-  function toggleBlock(block, isOpen, save = true) {
+  function toggleBlock(block, isOpen, save = false) {
     const btn = block.querySelector('.accordion-toggle');
     block.classList.toggle('open', isOpen);
     if (btn) {
@@ -100,36 +100,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initAccordions() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    let hasValidSaved = false;
+    // Все аккордеоны открыты по умолчанию
+    accordions.forEach(acc => toggleBlock(acc, true, false));
 
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (accordions.every(acc => parsed.hasOwnProperty(acc.id))) {
-          hasValidSaved = true;
-          accordions.forEach(acc => toggleBlock(acc, parsed[acc.id], false));
-        }
-      } catch (e) {
-        console.warn('Ошибка чтения состояний аккордеона:', e);
-      }
-    }
-
-    if (!hasValidSaved) {
-      accordions.forEach((acc, index) => toggleBlock(acc, index === 0, false));
-      saveStates();
-    }
-
+    // Клик по заголовку для ручного сворачивания/разворачивания
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       if (header) {
         header.style.cursor = 'pointer';
         header.addEventListener('click', (e) => {
           e.stopPropagation();
-          toggleBlock(acc, !acc.classList.contains('open'), true);
+          toggleBlock(acc, !acc.classList.contains('open'), false);
         });
       }
     });
+
+    // Авто-сворачивание при прокрутке (Intersection Observer)
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -100px 0px', // Сворачивать когда блок на 100px выше или ниже видимой области
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.target.classList.contains('accordion-block')) {
+          if (entry.isIntersecting) {
+            // Блок в видимой области — открываем
+            toggleBlock(entry.target, true, false);
+          } else {
+            // Блок ушёл из видимой области — сворачиваем
+            toggleBlock(entry.target, false, false);
+          }
+        }
+      });
+    }, observerOptions);
+
+    accordions.forEach(acc => observer.observe(acc));
   }
   initAccordions();
 
